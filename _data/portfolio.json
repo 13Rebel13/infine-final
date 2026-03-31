@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Logement — Rénovation & Extension",
+    "category": "Direction de Travaux",
+    "mission": "Direction de travaux",
+    "value_add": "Coordination fluide, maîtrise du rythme, visibilité client",
+    "description": "Fiche de référence à compléter — +15 ans d'expérience",
+    "image": ""
+  },
+  {
+    "id": 2,
+    "title": "Immeuble / Bureaux / Surfaces mixtes",
+    "category": "Gestion de Projet",
+    "mission": "Gestion de projet MO",
+    "value_add": "Cadrage, arbitrage, tenue budgétaire",
+    "description": "Fiche de référence à compléter — +15 ans d'expérience",
+    "image": ""
+  }
+]
