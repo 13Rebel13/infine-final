@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact — Infine Sàrl Holding</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html"><img src="assets/logo.jpg" alt="Infine Sàrl Holding"></a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button>
+  <ul class="nav-links"><li><a href="index.html">Accueil</a></li><li><a href="direction-travaux.html">Direction de Travaux</a></li><li><a href="gestion-projet.html">Gestion de Projet</a></li><li><a href="services-support.html">Services &amp; Support</a></li><li><a href="tarifs.html">Tarifs</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html" class="nav-cta active">Contact</a></li></ul>
+</nav>
+<main>
+  <div class="page-header"><div class="container"><h1>Contact</h1><p class="subtitle">Parlons du cadre, du besoin et du bon niveau d'intervention.</p></div></div>
+  <div class="section"><div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Coordonnées</h3>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div><strong>Téléphone</strong><p><a href="tel:+41767012720" style="color:#333;text-decoration:none">+41 76 701 27 20</a></p><p style="font-size:.8rem;color:#888;margin-top:.25rem">Contact direct pour un premier échange.</p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div><strong>Email</strong><p><a href="mailto:info@holdinginfine.com" style="color:#333;text-decoration:none">info@holdinginfine.com</a></p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div><strong>Adresse</strong><p>Chemin des Cigognes 4<br>1162 St-Prex</p></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.9rem;color:#555;margin-bottom:2rem;line-height:1.7">Le formulaire doit aller à l'essentiel : qui vous êtes, ce que vous cherchez, quand vous souhaitez démarrer, et sur quel type de mission.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="form-group"><label>Nom complet *</label><input type="text" name="nom" required placeholder="Jean Dupont"></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="jean@exemple.com"></div>
+          <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+41 00 000 00 00"></div>
+          <div class="form-group"><label>Type de mission</label>
+            <select name="mission">
+              <option value="">Sélectionner...</option>
+              <option>Direction de Travaux</option>
+              <option>Gestion de Projet</option>
+              <option>Services &amp; Support</option>
+              <option>Autre / À définir</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Délai souhaité</label><input type="text" name="delai" placeholder="ex: Dès que possible, Q2 2025..."></div>
+          <div class="form-group"><label>Votre projet *</label><textarea name="message" required placeholder="Décrivez votre projet ou votre besoin..."></textarea></div>
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </div></div>
+</main>
+<footer><p>© 2025 Infine Sàrl Holding &nbsp;·&nbsp; Chemin des Cigognes 4, 1162 St-Prex &nbsp;·&nbsp; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &nbsp;·&nbsp; <a href="tel:+41767012720">+41 76 701 27 20</a></p></footer>
+</body></html>
