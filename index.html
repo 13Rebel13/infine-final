@@ -4,67 +4,370 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infine Sàrl Holding — Direction de Travaux & Gestion de Projet</title>
-  <meta name="description" content="Direction de travaux, gestion de projet et support opérationnel pour des décisions plus claires et des réalisations mieux tenues.">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Direction de travaux, gestion de projet et support opérationnel pour des décisions plus claires et des réalisations mieux tenues. St-Prex, Suisse.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--blue:#0099FF;--dark:#1a1a1a;--gray:#888;--light:#f7f7f7;--border:#e5e5e5;--white:#fff}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--white);font-size:16px;line-height:1.6}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo img{height:36px;width:auto;display:block}
+    .nav-links{display:flex;gap:1.6rem;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--dark);font-size:.82rem;font-weight:500;letter-spacing:.02em;transition:color .2s}
+    .nav-links a:hover{color:var(--blue)}
+    .nav-cta{background:var(--blue);color:var(--white)!important;padding:.4rem 1rem;border-radius:4px}
+    .nav-cta:hover{background:#007acc!important}
+    .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+    .nav-toggle span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px}
+
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:0 2rem}
+    section{padding:80px 0;border-bottom:1px solid var(--border)}
+    section:last-of-type{border-bottom:none}
+
+    /* HERO */
+    #accueil{padding:100px 0 80px}
+    .hero-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1.5rem}
+    h1{font-size:clamp(2.4rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;max-width:750px;margin-bottom:1.5rem}
+    .hero-sub{font-size:1.05rem;color:#444;max-width:600px;margin-bottom:1.5rem;line-height:1.75}
+    .hero-quote{font-size:.9rem;color:var(--gray);font-style:italic;margin-bottom:2.5rem;padding-left:1rem;border-left:3px solid var(--blue)}
+    .hero-body{font-size:1rem;color:#444;max-width:600px;line-height:1.75;margin-bottom:2.5rem}
+    .btn{display:inline-block;padding:.75rem 1.8rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+    .btn-primary{background:var(--blue);color:var(--white)}
+    .btn-primary:hover{background:#007acc}
+    .btn-outline{border:2px solid var(--dark);color:var(--dark);background:transparent}
+    .btn-outline:hover{background:var(--dark);color:var(--white)}
+    .btn-group{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+
+    /* SERVICES GRID */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border)}
+    .service-block{background:var(--white);padding:2.5rem 2rem;transition:background .2s}
+    .service-block:hover{background:var(--light)}
+    .service-num{font-size:.75rem;font-weight:700;color:var(--blue);letter-spacing:.1em;margin-bottom:.75rem;display:block}
+    .service-block h3{font-size:1rem;font-weight:700;margin-bottom:.75rem;line-height:1.3}
+    .service-block p{font-size:.875rem;color:#555;line-height:1.6}
+    .price-note{margin-top:1.5rem;font-size:.85rem;color:var(--gray);text-align:center}
+    .price-note a{color:var(--blue);text-decoration:none}
+
+    /* SECTION TITLES */
+    .section-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+    h2{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.2}
+    .section-sub{font-size:1.05rem;color:#444;max-width:650px;line-height:1.75;margin-bottom:1.5rem}
+    .section-body{font-size:.95rem;color:#555;max-width:700px;line-height:1.75;margin-bottom:2.5rem}
+
+    /* TAGS */
+    .tags-row{display:flex;gap:.75rem;flex-wrap:wrap;margin:2rem 0}
+    .tag{padding:.4rem 1.2rem;border:1.5px solid var(--blue);border-radius:100px;font-size:.8rem;font-weight:600;color:var(--blue)}
+
+    /* PHASES */
+    .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem 0}
+    .phase{padding:2rem;border:1px solid var(--border);border-radius:8px}
+    .phase h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.75rem}
+    .phase p{font-size:.875rem;color:#555;line-height:1.6}
+
+    /* BENEFIT BOX */
+    .benefit-box{background:var(--dark);color:var(--white);padding:2.5rem;border-radius:8px;margin:2rem 0}
+    .benefit-box h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.75rem}
+    .benefit-box p{font-size:1rem;line-height:1.7}
+
+    /* 4 GRID */
+    .four-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin:2.5rem 0}
+    .grid-item{padding:1.75rem 1.5rem;border:1px solid var(--border);border-radius:8px;border-top:3px solid var(--blue)}
+    .grid-item h4{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .grid-item p{font-size:.85rem;color:#555;line-height:1.6}
+
+    /* CARDS */
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem 0}
+    .card{padding:2rem;border:1px solid var(--border);border-radius:8px}
+    .card h3{font-size:1rem;font-weight:700;margin-bottom:.75rem}
+    .card p{font-size:.875rem;color:#555;line-height:1.6}
+    .quote-block{border-left:3px solid var(--blue);padding:1.5rem 2rem;background:var(--light);margin:2rem 0;border-radius:0 8px 8px 0}
+    .quote-block p{font-size:1rem;font-style:italic;color:#444;line-height:1.7}
+
+    /* PRICING */
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:2.5rem 0}
+    .pricing-card{padding:2.5rem 2rem;border:1px solid var(--border);border-radius:8px}
+    .pricing-card.featured{border-color:var(--blue);border-width:2px}
+    .pricing-num{font-size:.75rem;font-weight:700;letter-spacing:.1em;color:var(--blue);margin-bottom:.5rem}
+    .pricing-card h3{font-size:1.05rem;font-weight:700;margin-bottom:1rem}
+    .price{font-size:2.2rem;font-weight:700;letter-spacing:-.02em;margin:1rem 0 .5rem}
+    .price span{font-size:1rem;font-weight:400;color:var(--gray)}
+    .pricing-card p{font-size:.875rem;color:#555;line-height:1.6;margin-bottom:.75rem}
+    .pricing-ideal{font-size:.8rem;color:var(--gray);font-style:italic;margin-top:1rem}
+
+    /* PORTFOLIO */
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin:2.5rem 0}
+    .project-card{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+    .project-card-img{height:200px;background:var(--light);display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:.85rem}
+    .project-card-img img{width:100%;height:100%;object-fit:cover}
+    .project-card-body{padding:1.5rem}
+    .project-category{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);margin-bottom:.5rem}
+    .project-card-body h3{font-size:1rem;font-weight:700;margin-bottom:.5rem}
+    .project-card-body p{font-size:.85rem;color:#555;line-height:1.5}
+    .project-meta{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--gray)}
+
+    /* CONTACT */
+    .contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem}
+    .contact-info h3{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:2rem}
+    .contact-item{display:flex;gap:1rem;margin-bottom:1.5rem}
+    .contact-icon{color:var(--blue);flex-shrink:0;margin-top:2px;font-size:1.1rem}
+    .contact-item strong{display:block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--gray);margin-bottom:.25rem}
+    .contact-item p{font-size:.9rem;color:#333;line-height:1.5}
+    .form-group{margin-bottom:1.25rem}
+    .form-group label{display:block;font-size:.8rem;font-weight:600;margin-bottom:.4rem;color:#333}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:6px;font-family:inherit;font-size:.9rem;color:var(--dark);background:var(--white);transition:border-color .2s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--blue)}
+    .form-group textarea{resize:vertical;min-height:140px}
+
+    /* FOOTER */
+    footer{padding:2rem;text-align:center;font-size:.8rem;color:var(--gray);border-top:1px solid var(--border)}
+    footer a{color:var(--gray);text-decoration:none}
+    footer a:hover{color:var(--blue)}
+
+    /* MOBILE */
+    @media(max-width:900px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--white);padding:1rem 2rem 1.5rem;border-bottom:1px solid var(--border);z-index:99;gap:1rem}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      .services-grid,.phases,.four-grid,.cards-grid,.pricing-grid{grid-template-columns:1fr}
+      .portfolio-grid,.contact-grid{grid-template-columns:1fr}
+      section{padding:50px 0}
+      #accueil{padding:60px 0 40px}
+    }
+  </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-logo" href="index.html"><img src="assets/logo.jpg" alt="Infine Sàrl Holding"></a>
+  <a class="nav-logo" href="#accueil"><img src="assets/logo.jpg" alt="Infine Sàrl Holding"></a>
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button>
   <ul class="nav-links">
-    <li><a href="index.html" class="active">Accueil</a></li>
-    <li><a href="direction-travaux.html">Direction de Travaux</a></li>
-    <li><a href="gestion-projet.html">Gestion de Projet</a></li>
-    <li><a href="services-support.html">Services &amp; Support</a></li>
-    <li><a href="tarifs.html">Tarifs</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#direction">Direction de Travaux</a></li>
+    <li><a href="#gestion">Gestion de Projet</a></li>
+    <li><a href="#support">Support</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<main>
-  <div class="hero">
-    <div class="container">
-      <span class="hero-tag">Infine Sàrl Holding</span>
-      <h1>Ambition créative</h1>
-      <p class="hero-sub">Direction de travaux, gestion de projet et support opérationnel pour des décisions plus claires et des réalisations mieux tenues.</p>
-      <p class="hero-quote">"Vision without execution is just hallucination" — Henry Ford</p>
-      <p style="color:#444;max-width:600px;margin-bottom:2.5rem;line-height:1.75">Infine apporte une structure créative à vos ambitions, elle arbitre les priorités et suit l'exécution avec une exigence simple : faire avancer, sécuriser et livrer.</p>
-      <div class="btn-group">
-        <a href="direction-travaux.html" class="btn btn-primary">Découvrir les expertises</a>
-        <a href="tarifs.html" class="btn btn-outline">Voir les tarifs</a>
-      </div>
+<!-- HERO -->
+<section id="accueil">
+  <div class="container">
+    <span class="hero-tag">Infine Sàrl Holding</span>
+    <h1>Ambition créative</h1>
+    <p class="hero-sub">Direction de travaux, gestion de projet et support opérationnel pour des décisions plus claires et des réalisations mieux tenues.</p>
+    <p class="hero-quote">"Vision without execution is just hallucination" — Henry Ford</p>
+    <p class="hero-body">Infine apporte une structure créative à vos ambitions, elle arbitre les priorités et suit l'exécution avec une exigence simple : faire avancer, sécuriser et livrer.</p>
+    <div class="btn-group">
+      <a href="#services" class="btn btn-primary">Découvrir les expertises</a>
+      <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
+    </div>
 
-      <div class="services-grid">
-        <a href="direction-travaux.html" class="service-block">
-          <span class="service-num">01</span>
-          <h3>Direction de Travaux</h3>
-          <p>Achat, coordination chantier, suivi qualité, gestion des coûts et délais sous contrôle.</p>
-        </a>
-        <a href="gestion-projet.html" class="service-block">
-          <span class="service-num">02</span>
-          <h3>Gestion opérationnelle de Projet</h3>
-          <p>Représentation indépendante et pilotage global côté maître d'ouvrage.</p>
-        </a>
-        <a href="services-support.html" class="service-block">
-          <span class="service-num">03</span>
-          <h3>Services &amp; Support</h3>
-          <p>Exécution directe en EG ou ET ou renfort ciblé : administratif, événementiel, conseil etc.</p>
-        </a>
+    <div id="services" class="services-grid">
+      <div class="service-block">
+        <span class="service-num">01</span>
+        <h3>Direction de Travaux</h3>
+        <p>Achat, coordination chantier, suivi qualité, gestion des coûts et délais sous contrôle.</p>
       </div>
+      <div class="service-block">
+        <span class="service-num">02</span>
+        <h3>Gestion opérationnelle de Projet</h3>
+        <p>Représentation indépendante et pilotage global côté maître d'ouvrage.</p>
+      </div>
+      <div class="service-block">
+        <span class="service-num">03</span>
+        <h3>Services &amp; Support</h3>
+        <p>Exécution directe en EG ou ET ou renfort ciblé : administratif, événementiel, conseil etc.</p>
+      </div>
+    </div>
+    <p class="price-note">Prix visibles : à l'heure, au mois ou au projet. — <a href="#tarifs">Voir les tarifs</a></p>
+  </div>
+</section>
 
-      <p class="price-note">Prix visibles : à l'heure, au mois ou au projet. — <a href="tarifs.html" style="color:var(--blue)">Voir les tarifs</a></p>
+<!-- DIRECTION DE TRAVAUX -->
+<section id="direction">
+  <div class="container">
+    <div class="section-label">01 — Direction de Travaux</div>
+    <h2>Direction de Travaux</h2>
+    <p class="section-sub">1 chantier à la fois : tout avance mieux quand les responsabilités sont nettes et le suivi constant</p>
+    <p class="section-body">Nous assurons la continuité entre étude, exécution et réception : planification, coordination des entreprises, contrôle qualité, suivi des coûts et respect du calendrier.</p>
+    <div class="tags-row">
+      <span class="tag">Organiser</span>
+      <span class="tag">Coordonner</span>
+      <span class="tag">Contrôler</span>
+      <span class="tag">Livrer</span>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <h4>Avant travaux</h4>
+        <p>Définition des objectifs de qualité et de coût, préparation des séquences, mise en concurrence sur tous les lots lors de l'acquisition, cadrage des intervenants, validation du rythme d'exécution.</p>
+      </div>
+      <div class="phase">
+        <h4>Pendant travaux</h4>
+        <p>Présence utile sur le terrain, décisions rapides, reporting clair et suivi des écarts.</p>
+      </div>
+      <div class="phase">
+        <h4>Fin de chantier</h4>
+        <p>Réception structurée, levée des réserves, clôture documentaire et remise maîtrisée.</p>
+      </div>
+    </div>
+    <div class="benefit-box">
+      <h4>Bénéfice client</h4>
+      <p>Moins de friction, moins d'angles morts, plus de visibilité : 1 responsable global</p>
+    </div>
+    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px;margin-top:2rem">Vous cherchez une direction de travaux capable de tenir le terrain sans alourdir la communication ? Parlons du cadre, du rythme et des responsabilités. <a href="#contact" style="color:var(--blue)">→ Contactez-nous</a></p>
+  </div>
+</section>
+
+<!-- GESTION DE PROJET -->
+<section id="gestion">
+  <div class="container">
+    <div class="section-label">02 — Gestion de Projet</div>
+    <h2>Gestion de Projet</h2>
+    <p class="section-sub">Un pilotage indépendant pour décider juste, au bon moment.</p>
+    <p class="section-body">Nous représentons les intérêts du client, du Maître d'ouvrage ou du Conseil d'Administration : de la faisabilité à la réalisation — cadrage, arbitrage, budget, risques, coordination des parties prenantes.<br><br>Nous dirigeons vos projets comme une entreprise : vision stratégique, gouvernance organisationnelle et contrôle opérationnel (selon méthode KISS)</p>
+    <div class="four-grid">
+      <div class="grid-item"><h4>Cadrer</h4><p>Objectifs, périmètre, gouvernance, budget et priorités sont clarifiés dès l'amont.</p></div>
+      <div class="grid-item"><h4>Arbitrer</h4><p>Chaque choix est évalué selon son impact concret sur la qualité, le délai et le coût : les décisions sont sécurisées.</p></div>
+      <div class="grid-item"><h4>Piloter</h4><p>Le projet reste lisible grâce à des points de contrôle courts, utiles et documentés.</p></div>
+      <div class="grid-item"><h4>Sécuriser</h4><p>Moins d'imprévus, plus de maîtrise.</p></div>
+    </div>
+    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px">Vous avez besoin d'un représentant du maître d'ouvrage capable de tenir la ligne, de poser les bonnes questions et d'accélérer les décisions ? <a href="#contact" style="color:var(--blue)">→ Contactez-nous</a></p>
+  </div>
+</section>
+
+<!-- SERVICES & SUPPORT -->
+<section id="support">
+  <div class="container">
+    <div class="section-label">03 — Services &amp; Support</div>
+    <h2>Services &amp; Support</h2>
+    <p class="section-sub">Le renfort utile quand vous avez besoin d'un relais fiable, discret et déjà opérationnel.</p>
+    <div class="cards-grid">
+      <div class="card"><h3>Réalisation</h3><p>Exécution en toute responsabilité de mandats en Entreprise Totale ou Générale. Organisation d'opérations événementielles.</p></div>
+      <div class="card"><h3>Support aux bureaux d'Études</h3><p>Appui ponctuel pour absorber les pics de charge ; externalisation de tâches administratives ; support technique ; Traduction FR/DE/EN/RO/ES.</p></div>
+      <div class="card"><h3>Gouvernance &amp; Apport d'affaires</h3><p>Mise en relation de prospects avec bénéficiaires et établissement de relations commerciales. Réseautage ciblé.</p></div>
+    </div>
+    <div class="quote-block"><p>Un soutien opérationnel précis pour que votre structure reste fluide, même quand le projet se densifie.</p></div>
+    <p style="font-size:.85rem;color:#666;line-height:1.7;padding:1.5rem;background:var(--light);border-radius:8px">Mandat d'Administrateur indépendant au sein du Conseil d'Administration — ou Renfort opérationnel basé sur la performance, transparence et traçabilité.</p>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="container">
+    <div class="section-label">Tarifs</div>
+    <h2>Tarifs</h2>
+    <p class="section-sub">Parler du prix n'affaiblit pas la crédibilité. Cela la renforce.</p>
+    <p style="font-size:.85rem;color:var(--gray);margin-bottom:2rem">Les prix s'entendent en CHF brut HT</p>
+    <div class="pricing-grid">
+      <div class="pricing-card featured">
+        <div class="pricing-num">01</div>
+        <h3>Tarif horaire</h3>
+        <p>Pour un besoin ponctuel, une expertise ciblée ou un appui court. Tous frais et charges compris. Rien de plus.</p>
+        <div class="price">CHF 140<span>.00 / h</span></div>
+        <p class="pricing-ideal">Idéal pour : arbitrage rapide, séance, support ciblé.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-num">02</div>
+        <h3>Forfait mensuel</h3>
+        <p>Pour un besoin récurrent avec un volume maîtrisé et une visibilité budgétaire.</p>
+        <div class="price" style="font-size:1.4rem;color:var(--gray)">Sur discussion</div>
+        <p class="pricing-ideal">Idéal pour : suivi régulier, présence terrain hebdomadaire.</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-num">03</div>
+        <h3>Au projet</h3>
+        <p>Sur devis selon périmètre défini. Engagement sur le livrable, transparence sur le coût.</p>
+        <div class="price" style="font-size:1.4rem;color:var(--gray)">Sur devis</div>
+        <p class="pricing-ideal">Idéal pour : mission complète, direction de projet, EG/ET.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="cta-section">
-    <div class="container">
-      <p>Lecture claire : Trois axes. Des prix affichés. Un contact unique et direct.</p>
-      <a href="contact.html" class="btn btn-primary">Parlons de votre projet</a>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2>Portfolio</h2>
+    <p class="section-sub">Des fiches références fondées sur +15 ans d'expérience qui inspirent confiance</p>
+    <div class="portfolio-grid" id="portfolio-grid">
+      <div class="project-card">
+        <div class="project-card-img"><span>Photo à venir</span></div>
+        <div class="project-card-body">
+          <div class="project-category">Direction de Travaux</div>
+          <h3>Logement — Rénovation &amp; Extension</h3>
+          <p>Fiche de référence à compléter</p>
+          <div class="project-meta"><strong>Mission :</strong> Direction de travaux &nbsp;·&nbsp; <strong>Valeur ajoutée :</strong> Coordination fluide, maîtrise du rythme</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-img"><span>Photo à venir</span></div>
+        <div class="project-card-body">
+          <div class="project-category">Gestion de Projet</div>
+          <h3>Immeuble / Bureaux / Surfaces mixtes</h3>
+          <p>Fiche de référence à compléter</p>
+          <div class="project-meta"><strong>Mission :</strong> Gestion de projet MO &nbsp;·&nbsp; <strong>Valeur ajoutée :</strong> Cadrage, arbitrage, tenue budgétaire</div>
+        </div>
+      </div>
     </div>
   </div>
-</main>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h2>Contact</h2>
+    <p class="section-sub">Parlons du cadre, du besoin et du bon niveau d'intervention.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Coordonnées</h3>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <div><strong>Téléphone</strong><p><a href="tel:+41767012720" style="color:#333;text-decoration:none">+41 76 701 27 20</a></p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <div><strong>Email</strong><p><a href="mailto:info@holdinginfine.com" style="color:#333;text-decoration:none">info@holdinginfine.com</a></p></div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div><strong>Adresse</strong><p>Chemin des Cigognes 4<br>1162 St-Prex</p></div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.9rem;color:#555;margin-bottom:2rem;line-height:1.7">Qui vous êtes, ce que vous cherchez, quand vous souhaitez démarrer, et sur quel type de mission.</p>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none"><input name="bot-field"></p>
+          <div class="form-group"><label>Nom complet *</label><input type="text" name="nom" required placeholder="Jean Dupont"></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="jean@exemple.com"></div>
+          <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+41 00 000 00 00"></div>
+          <div class="form-group"><label>Type de mission</label>
+            <select name="mission">
+              <option value="">Sélectionner...</option>
+              <option>Direction de Travaux</option>
+              <option>Gestion de Projet</option>
+              <option>Services &amp; Support</option>
+              <option>Autre / À définir</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Délai souhaité</label><input type="text" name="delai" placeholder="ex: Dès que possible, Q2 2026..."></div>
+          <div class="form-group"><label>Votre projet *</label><textarea name="message" required placeholder="Décrivez votre projet ou votre besoin..."></textarea></div>
+          <button type="submit" class="btn btn-primary">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <p>© 2025 Infine Sàrl Holding &nbsp;·&nbsp; Chemin des Cigognes 4, 1162 St-Prex &nbsp;·&nbsp; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &nbsp;·&nbsp; <a href="tel:+41767012720">+41 76 701 27 20</a></p>
