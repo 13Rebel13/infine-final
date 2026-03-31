@@ -2,21 +2,25 @@ backend:
   name: git-gateway
   branch: main
 
+locale: fr
+
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
   - name: "portfolio"
-    label: "Portfolio"
+    label: "Projets Portfolio"
+    label_singular: "Projet"
     folder: "_data/projects"
     create: true
     slug: "{{slug}}"
     extension: "json"
     format: "json"
+    summary: "{{title}} — {{category}}"
     fields:
-      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Titre du projet", name: "title", widget: "string", hint: "Ex: Rénovation immeuble résidentiel, Lausanne" }
       - { label: "Catégorie", name: "category", widget: "select", options: ["Direction de Travaux", "Gestion de Projet", "Services & Support"] }
-      - { label: "Mission", name: "mission", widget: "string" }
-      - { label: "Valeur ajoutée", name: "value_add", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Mission", name: "mission", widget: "string", hint: "Ex: Direction de travaux complète" }
+      - { label: "Valeur ajoutée", name: "value_add", widget: "string", hint: "Ex: Livraison en délai, 0 réserve à la réception" }
+      - { label: "Description", name: "description", widget: "text", hint: "Quelques lignes sur le projet" }
+      - { label: "Photo", name: "image", widget: "image", required: false, hint: "Photo du projet (optionnel)" }
