@@ -10,7 +10,7 @@
   <style>
 :root{
   --cream:#F2EDE8;--cream-dark:#E8D9C5;--gold:#C4993B;--gold-light:#D4A94B;
-  --dark:#1A1A1A;--navy:#1E2A3A;--body-text:#3A3A3A;--gray:#6A6A6A;--gray-light:#8A8A8A;
+  --dark:#1A1A1A;--navy:#1C2A35;--body-text:#3A3A3A;--gray:#6A6A6A;--gray-light:#8A8A8A;
   --border:#D8D2CA;--white:#FFFFFF;--card-bg:#FFFFFF;--pill-bg:#EBE5DD;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,7 +18,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--cream);font-size:16px;line-height:1.6}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--white);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:72px}
+nav{position:sticky;top:0;z-index:100;background:var(--cream);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav-brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--dark)}
 .nav-brand-text{line-height:1.15}
 .nav-brand-text .top{font-weight:800;font-size:1.1rem;letter-spacing:.08em;display:block}
@@ -37,6 +37,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);padding:0 3rem;dis
 .pill{display:inline-block;background:var(--gold);color:var(--white);padding:.5rem 1.5rem;border-radius:30px;font-size:.82rem;font-weight:500}
 .pill-light{background:var(--pill-bg);color:var(--body-text);border:1px solid var(--border)}
 .pill-outline{background:transparent;color:var(--body-text);border:1.5px solid var(--border)}
+.pill-dark{background:var(--navy);color:var(--white)}
 .pill-frosted{background:rgba(255,255,255,.15);color:var(--white);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px)}
 
 /* BUTTONS */
@@ -48,9 +49,9 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);padding:0 3rem;dis
 .btn-group{display:flex;gap:1rem;flex-wrap:wrap}
 
 /* HEADINGS */
-h1,.h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.2vw,2.6rem);font-weight:700;line-height:1.25;color:var(--dark);letter-spacing:.3px}
+h1,.h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:600;line-height:1.4;color:var(--dark);letter-spacing:3px}
 h2,.h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.25;color:var(--dark);letter-spacing:.3px;margin-bottom:.75rem}
-h3{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;color:var(--dark);margin-bottom:.5rem}
+h3{font-family:"Playfair Display",serif;font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:.5rem;letter-spacing:.5px}
 .sub{font-size:.95rem;color:var(--body-text);line-height:1.7;max-width:660px}
 .body-text{font-size:.9rem;color:var(--body-text);line-height:1.75}
 .gold-text{color:var(--gold)}
@@ -216,7 +217,7 @@ footer a:hover{color:var(--gold)}
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
-        <span class="pill">Ambition cr&eacute;ative</span>
+        <span class="pill pill-dark">Ambition cr&eacute;ative</span>
         <h1>Direction de travaux, gestion de projet et support op&eacute;rationnel pour des d&eacute;cisions plus claires et des r&eacute;alisations mieux tenues.</h1>
         <p class="quote-italic">&ldquo;Vision without execution is just hallucination&rdquo; &ndash; Henry Ford</p>
         <p class="body-text" style="margin:1.2rem 0 2rem;max-width:500px">Infine apporte une structure cr&eacute;ative &agrave; vos ambitions, elle arbitre les priorit&eacute;s et suit l&rsquo;ex&eacute;cution avec une exigence simple&nbsp;: faire avancer, s&eacute;curiser et livrer.</p>
