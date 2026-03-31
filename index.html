@@ -194,14 +194,16 @@ footer a:hover{color:var(--gold)}
 }
   </style>
   <script>
-  // Update active nav on scroll
   document.addEventListener('DOMContentLoaded',function(){
     var links=document.querySelectorAll('.nav-links a');
-    var sections=['accueil','direction','gestion','support','tarifs','portfolio','contact'];
+    var ids=['accueil','direction','gestion','support','tarifs','portfolio','contact'];
+    var isScrolling=false;
+
+    // Update active nav on scroll
     function updateNav(){
-      var st=window.scrollY+100;
-      for(var i=sections.length-1;i>=0;i--){
-        var el=document.getElementById(sections[i]);
+      var st=window.scrollY+120;
+      for(var i=ids.length-1;i>=0;i--){
+        var el=document.getElementById(ids[i]);
         if(el&&el.offsetTop<=st){
           links.forEach(function(a){a.classList.remove('active')});
           links[i].classList.add('active');
@@ -210,6 +212,52 @@ footer a:hover{color:var(--gold)}
       }
     }
     window.addEventListener('scroll',updateNav);
+
+    // PowerPoint-style: scroll snaps to next/prev section
+    var currentIdx=0;
+    function getClosestSection(){
+      var st=window.scrollY+200;
+      for(var i=ids.length-1;i>=0;i--){
+        var el=document.getElementById(ids[i]);
+        if(el&&el.offsetTop<=st) return i;
+      }
+      return 0;
+    }
+
+    window.addEventListener('wheel',function(e){
+      if(isScrolling) { e.preventDefault(); return; }
+      currentIdx=getClosestSection();
+      if(e.deltaY>0){
+        // Scroll down
+        if(currentIdx<ids.length-1){
+          e.preventDefault();
+          isScrolling=true;
+          currentIdx++;
+          document.getElementById(ids[currentIdx]).scrollIntoView({behavior:'smooth',block:'start'});
+          setTimeout(function(){isScrolling=false},800);
+        }
+      } else {
+        // Scroll up
+        if(currentIdx>0){
+          e.preventDefault();
+          isScrolling=true;
+          currentIdx--;
+          document.getElementById(ids[currentIdx]).scrollIntoView({behavior:'smooth',block:'start'});
+          setTimeout(function(){isScrolling=false},800);
+        }
+      }
+    },{passive:false});
+
+    // Nav clicks also update index
+    links.forEach(function(a,i){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        currentIdx=i;
+        isScrolling=true;
+        document.getElementById(ids[i]).scrollIntoView({behavior:'smooth',block:'start'});
+        setTimeout(function(){isScrolling=false},800);
+      });
+    });
   });
   </script>
 </head>
