@@ -29,6 +29,9 @@
     section{padding:80px 0;border-bottom:1px solid var(--border)}
     section:last-of-type{border-bottom:none}
 
+    /* HERO IMAGE */
+    .section-hero-img{width:100%;height:320px;object-fit:cover;border-radius:8px;margin-bottom:2.5rem}
+
     /* HERO */
     #accueil{padding:100px 0 80px}
     .hero-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:1.5rem}
@@ -42,6 +45,9 @@
     .btn-outline{border:2px solid var(--dark);color:var(--dark);background:transparent}
     .btn-outline:hover{background:var(--dark);color:var(--white)}
     .btn-group{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3.5rem}
+
+    /* LECTURE CLAIRE */
+    .lecture-claire{margin-top:3rem;margin-bottom:2rem;font-size:.85rem;color:var(--gray);font-weight:600;letter-spacing:.05em}
 
     /* SERVICES GRID */
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border)}
@@ -88,6 +94,9 @@
     .quote-block{border-left:3px solid var(--blue);padding:1.5rem 2rem;background:var(--light);margin:2rem 0;border-radius:0 8px 8px 0}
     .quote-block p{font-size:1rem;font-style:italic;color:#444;line-height:1.7}
 
+    /* ADMIN BOX */
+    .admin-box{font-size:.85rem;color:#666;line-height:1.7;padding:1.5rem;background:var(--light);border-radius:8px;margin-top:1.5rem}
+
     /* PRICING */
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:2.5rem 0}
     .pricing-card{padding:2.5rem 2rem;border:1px solid var(--border);border-radius:8px}
@@ -130,6 +139,7 @@
 
     /* MOBILE */
     @media(max-width:900px){
+      nav{padding:0 1rem}
       .nav-links{display:none;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--white);padding:1rem 2rem 1.5rem;border-bottom:1px solid var(--border);z-index:99;gap:1rem}
       .nav-links.open{display:flex}
       .nav-toggle{display:flex}
@@ -137,6 +147,7 @@
       .portfolio-grid,.contact-grid{grid-template-columns:1fr}
       section{padding:50px 0}
       #accueil{padding:60px 0 40px}
+      .section-hero-img{height:200px}
     }
   </style>
 </head>
@@ -157,105 +168,111 @@
   </ul>
 </nav>
 
-<!-- HERO -->
+<!-- HERO / ACCUEIL -->
 <section id="accueil">
   <div class="container">
     <span class="hero-tag">Infine Sàrl Holding</span>
-    <h1>Ambition créative</h1>
-    <p class="hero-sub">Direction de travaux, gestion de projet et support opérationnel pour des décisions plus claires et des réalisations mieux tenues.</p>
-    <p class="hero-quote">"Vision without execution is just hallucination" — Henry Ford</p>
-    <p class="hero-body">Infine apporte une structure créative à vos ambitions, elle arbitre les priorités et suit l'exécution avec une exigence simple : faire avancer, sécuriser et livrer.</p>
+    <h1>Ambition cr&eacute;ative</h1>
+    <p class="hero-sub">Direction de travaux, gestion de projet et support op&eacute;rationnel pour des d&eacute;cisions plus claires et des r&eacute;alisations mieux tenues.</p>
+    <p class="hero-quote">&laquo;&nbsp;Vision without execution is just hallucination&nbsp;&raquo; &mdash; Henry Ford</p>
+    <p class="hero-body">Infine apporte une structure cr&eacute;ative &agrave; vos ambitions, elle arbitre les priorit&eacute;s et suit l&rsquo;ex&eacute;cution avec une exigence simple&nbsp;: faire avancer, s&eacute;curiser et livrer.</p>
     <div class="btn-group">
-      <a href="#services" class="btn btn-primary">Découvrir les expertises</a>
+      <a href="#services" class="btn btn-primary">D&eacute;couvrir les expertises</a>
       <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
     </div>
+
+    <p class="lecture-claire">Lecture claire&nbsp;: Trois axes. Des prix affich&eacute;s. Un contact unique et direct.</p>
 
     <div id="services" class="services-grid">
       <div class="service-block">
         <span class="service-num">01</span>
         <h3>Direction de Travaux</h3>
-        <p>Achat, coordination chantier, suivi qualité, gestion des coûts et délais sous contrôle.</p>
+        <p>Achat, coordination chantier, suivi qualit&eacute;, gestion des co&ucirc;ts et d&eacute;lais sous contr&ocirc;le.</p>
       </div>
       <div class="service-block">
         <span class="service-num">02</span>
-        <h3>Gestion opérationnelle de Projet</h3>
-        <p>Représentation indépendante et pilotage global côté maître d'ouvrage.</p>
+        <h3>Gestion op&eacute;rationnelle de Projet</h3>
+        <p>Repr&eacute;sentation ind&eacute;pendante et pilotage global c&ocirc;t&eacute; ma&icirc;tre d&rsquo;ouvrage.</p>
       </div>
       <div class="service-block">
         <span class="service-num">03</span>
         <h3>Services &amp; Support</h3>
-        <p>Exécution directe en EG ou ET ou renfort ciblé : administratif, événementiel, conseil etc.</p>
+        <p>Ex&eacute;cution directe en EG ou ET ou renfort cibl&eacute;&nbsp;: administratif, &eacute;v&eacute;nementiel, conseil etc.</p>
       </div>
     </div>
-    <p class="price-note">Prix visibles : à l'heure, au mois ou au projet. — <a href="#tarifs">Voir les tarifs</a></p>
+    <p class="price-note">Prix visibles&nbsp;: &agrave; l&rsquo;heure, au mois ou au projet. &mdash; <a href="#tarifs">Voir les tarifs</a></p>
+    <p style="font-size:.8rem;color:var(--gray);text-align:center;margin-top:.5rem">Structure pens&eacute;e pour mobile et ordinateur &mdash; holdinginfine.com</p>
   </div>
 </section>
 
 <!-- DIRECTION DE TRAVAUX -->
 <section id="direction">
   <div class="container">
-    <div class="section-label">01 — Direction de Travaux</div>
+    <img src="assets/hero-direction.jpg" alt="Direction de travaux - chantier" class="section-hero-img" loading="lazy">
+    <div class="section-label">01 &mdash; Direction de Travaux</div>
     <h2>Direction de Travaux</h2>
-    <p class="section-sub">1 chantier à la fois : tout avance mieux quand les responsabilités sont nettes et le suivi constant</p>
-    <p class="section-body">Nous assurons la continuité entre étude, exécution et réception : planification, coordination des entreprises, contrôle qualité, suivi des coûts et respect du calendrier.</p>
+    <p class="section-sub">1 chantier &agrave; la fois&nbsp;: tout avance mieux quand les responsabilit&eacute;s sont nettes et le suivi constant</p>
+    <p class="section-body">Nous assurons la continuit&eacute; entre &eacute;tude, ex&eacute;cution et r&eacute;ception&nbsp;: planification, coordination des entreprises, contr&ocirc;le qualit&eacute;, suivi des co&ucirc;ts et respect du calendrier.</p>
     <div class="tags-row">
       <span class="tag">Organiser</span>
       <span class="tag">Coordonner</span>
-      <span class="tag">Contrôler</span>
+      <span class="tag">Contr&ocirc;ler</span>
       <span class="tag">Livrer</span>
     </div>
     <div class="phases">
       <div class="phase">
         <h4>Avant travaux</h4>
-        <p>Définition des objectifs de qualité et de coût, préparation des séquences, mise en concurrence sur tous les lots lors de l'acquisition, cadrage des intervenants, validation du rythme d'exécution.</p>
+        <p>D&eacute;finition des objectifs de qualit&eacute; et de co&ucirc;t, pr&eacute;paration des s&eacute;quences, mise en concurrence sur tous les lots lors de l&rsquo;acquisition, cadrage des intervenants, validation du rythme d&rsquo;ex&eacute;cution.</p>
       </div>
       <div class="phase">
         <h4>Pendant travaux</h4>
-        <p>Présence utile sur le terrain, décisions rapides, reporting clair et suivi des écarts.</p>
+        <p>Pr&eacute;sence utile sur le terrain, d&eacute;cisions rapides, reporting clair et suivi des &eacute;carts.</p>
       </div>
       <div class="phase">
         <h4>Fin de chantier</h4>
-        <p>Réception structurée, levée des réserves, clôture documentaire et remise maîtrisée.</p>
+        <p>R&eacute;ception structur&eacute;e, lev&eacute;e des r&eacute;serves, cl&ocirc;ture documentaire et remise ma&icirc;tris&eacute;e.</p>
       </div>
     </div>
     <div class="benefit-box">
-      <h4>Bénéfice client</h4>
-      <p>Moins de friction, moins d'angles morts, plus de visibilité : 1 responsable global</p>
+      <h4>B&eacute;n&eacute;fice client</h4>
+      <p>Moins de friction, moins d&rsquo;angles morts, plus de visibilit&eacute;&nbsp;: 1 responsable global</p>
     </div>
-    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px;margin-top:2rem">Vous cherchez une direction de travaux capable de tenir le terrain sans alourdir la communication ? Parlons du cadre, du rythme et des responsabilités. <a href="#contact" style="color:var(--blue)">→ Contactez-nous</a></p>
+    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px;margin-top:2rem">Vous cherchez une direction de travaux capable de tenir le terrain sans alourdir la communication&nbsp;? Parlons du cadre, du rythme et des responsabilit&eacute;s. <a href="#contact" style="color:var(--blue)">&rarr; Contactez-nous</a></p>
   </div>
 </section>
 
 <!-- GESTION DE PROJET -->
 <section id="gestion">
   <div class="container">
-    <div class="section-label">02 — Gestion de Projet</div>
+    <img src="assets/hero-gestion.jpg" alt="Gestion de projet - salle de r&eacute;union" class="section-hero-img" loading="lazy">
+    <div class="section-label">02 &mdash; Gestion de Projet</div>
     <h2>Gestion de Projet</h2>
-    <p class="section-sub">Un pilotage indépendant pour décider juste, au bon moment.</p>
-    <p class="section-body">Nous représentons les intérêts du client, du Maître d'ouvrage ou du Conseil d'Administration : de la faisabilité à la réalisation — cadrage, arbitrage, budget, risques, coordination des parties prenantes.<br><br>Nous dirigeons vos projets comme une entreprise : vision stratégique, gouvernance organisationnelle et contrôle opérationnel (selon méthode KISS)</p>
+    <p class="section-sub">Un pilotage ind&eacute;pendant pour d&eacute;cider juste, au bon moment.</p>
+    <p class="section-body">Nous repr&eacute;sentons les int&eacute;r&ecirc;ts du client, du Ma&icirc;tre d&rsquo;ouvrage ou du Conseil d&rsquo;Administration&nbsp;: de la faisabilit&eacute; &agrave; la r&eacute;alisation &mdash; cadrage, arbitrage, budget, risques, coordination des parties prenantes.<br><br>Nous dirigeons vos projets comme une entreprise&nbsp;: vision strat&eacute;gique, gouvernance organisationnelle et contr&ocirc;le op&eacute;rationnel (selon m&eacute;thode KISS)</p>
     <div class="four-grid">
-      <div class="grid-item"><h4>Cadrer</h4><p>Objectifs, périmètre, gouvernance, budget et priorités sont clarifiés dès l'amont.</p></div>
-      <div class="grid-item"><h4>Arbitrer</h4><p>Chaque choix est évalué selon son impact concret sur la qualité, le délai et le coût : les décisions sont sécurisées.</p></div>
-      <div class="grid-item"><h4>Piloter</h4><p>Le projet reste lisible grâce à des points de contrôle courts, utiles et documentés.</p></div>
-      <div class="grid-item"><h4>Sécuriser</h4><p>Moins d'imprévus, plus de maîtrise.</p></div>
+      <div class="grid-item"><h4>Cadrer</h4><p>Objectifs, p&eacute;rim&egrave;tre, gouvernance, budget et priorit&eacute;s sont clarifi&eacute;s d&egrave;s l&rsquo;amont.</p></div>
+      <div class="grid-item"><h4>Arbitrer</h4><p>Chaque choix est &eacute;valu&eacute; selon son impact concret sur la qualit&eacute;, le d&eacute;lai et le co&ucirc;t&nbsp;: les d&eacute;cisions sont s&eacute;curis&eacute;es.</p></div>
+      <div class="grid-item"><h4>Piloter</h4><p>Le projet reste lisible gr&acirc;ce &agrave; des points de contr&ocirc;le courts, utiles et document&eacute;s.</p></div>
+      <div class="grid-item"><h4>S&eacute;curiser</h4><p>Moins d&rsquo;impr&eacute;vus, plus de ma&icirc;trise.</p></div>
     </div>
-    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px">Vous avez besoin d'un représentant du maître d'ouvrage capable de tenir la ligne, de poser les bonnes questions et d'accélérer les décisions ? <a href="#contact" style="color:var(--blue)">→ Contactez-nous</a></p>
+    <p style="font-size:.95rem;color:#555;line-height:1.75;max-width:700px">Vous avez besoin d&rsquo;un repr&eacute;sentant du ma&icirc;tre d&rsquo;ouvrage capable de tenir la ligne, de poser les bonnes questions et d&rsquo;acc&eacute;l&eacute;rer les d&eacute;cisions&nbsp;? <a href="#contact" style="color:var(--blue)">&rarr; Contactez-nous</a></p>
   </div>
 </section>
 
 <!-- SERVICES & SUPPORT -->
 <section id="support">
   <div class="container">
-    <div class="section-label">03 — Services &amp; Support</div>
+    <img src="assets/hero-services.jpg" alt="Services et support - &eacute;quipe" class="section-hero-img" loading="lazy">
+    <div class="section-label">03 &mdash; Services &amp; Support</div>
     <h2>Services &amp; Support</h2>
-    <p class="section-sub">Le renfort utile quand vous avez besoin d'un relais fiable, discret et déjà opérationnel.</p>
+    <p class="section-sub">Le renfort utile quand vous avez besoin d&rsquo;un relais fiable, discret et d&eacute;j&agrave; op&eacute;rationnel.</p>
     <div class="cards-grid">
-      <div class="card"><h3>Réalisation</h3><p>Exécution en toute responsabilité de mandats en Entreprise Totale ou Générale. Organisation d'opérations événementielles.</p></div>
-      <div class="card"><h3>Support aux bureaux d'Études</h3><p>Appui ponctuel pour absorber les pics de charge ; externalisation de tâches administratives ; support technique ; Traduction FR/DE/EN/RO/ES.</p></div>
-      <div class="card"><h3>Gouvernance &amp; Apport d'affaires</h3><p>Mise en relation de prospects avec bénéficiaires et établissement de relations commerciales. Réseautage ciblé.</p></div>
+      <div class="card"><h3>R&eacute;alisation</h3><p>Ex&eacute;cution en toute responsabilit&eacute; de mandats en Entreprise Totale ou G&eacute;n&eacute;rale. Organisation d&rsquo;op&eacute;rations &eacute;v&eacute;nementielles.</p></div>
+      <div class="card"><h3>Support aux bureaux d&rsquo;&Eacute;tudes</h3><p>Appui ponctuel pour absorber les pics de charge&nbsp;; externalisation de t&acirc;ches administratives&nbsp;; support technique&nbsp;; Traduction FR/DE/EN/RO/ES.</p></div>
+      <div class="card"><h3>Gouvernance &amp; Apport d&rsquo;affaires</h3><p>Mise en relation de prospects avec b&eacute;n&eacute;ficiaires et &eacute;tablissement de relations commerciales. R&eacute;seautage cibl&eacute;.</p></div>
     </div>
-    <div class="quote-block"><p>Un soutien opérationnel précis pour que votre structure reste fluide, même quand le projet se densifie.</p></div>
-    <p style="font-size:.85rem;color:#666;line-height:1.7;padding:1.5rem;background:var(--light);border-radius:8px">Mandat d'Administrateur indépendant au sein du Conseil d'Administration — ou Renfort opérationnel basé sur la performance, transparence et traçabilité.</p>
+    <div class="quote-block"><p>&laquo;&nbsp;Un soutien op&eacute;rationnel pr&eacute;cis pour que votre structure reste fluide, m&ecirc;me quand le projet se densifie.&nbsp;&raquo;</p></div>
+    <div class="admin-box">Mandat d&rsquo;Administrateur ind&eacute;pendant au sein du Conseil d&rsquo;Administration &mdash; ou Renfort op&eacute;rationnel bas&eacute; sur la performance, transparence et tra&ccedil;abilit&eacute;.</div>
   </div>
 </section>
 
@@ -264,29 +281,29 @@
   <div class="container">
     <div class="section-label">Tarifs</div>
     <h2>Tarifs</h2>
-    <p class="section-sub">Parler du prix n'affaiblit pas la crédibilité. Cela la renforce.</p>
-    <p style="font-size:.85rem;color:var(--gray);margin-bottom:2rem">Les prix s'entendent en CHF brut HT</p>
+    <p class="section-sub">Parler du prix n&rsquo;affaiblit pas la cr&eacute;dibilit&eacute;. Cela la renforce.</p>
+    <p style="font-size:.85rem;color:var(--gray);margin-bottom:2rem">Les prix s&rsquo;entendent en CHF brut HT</p>
     <div class="pricing-grid">
       <div class="pricing-card featured">
         <div class="pricing-num">01</div>
         <h3>Tarif horaire</h3>
-        <p>Pour un besoin ponctuel, une expertise ciblée ou un appui court. Tous frais et charges compris. Rien de plus.</p>
+        <p>Pour un besoin ponctuel, une expertise cibl&eacute;e ou un appui court. Tous frais et charges compris. Rien de plus.</p>
         <div class="price">CHF 140<span>.00 / h</span></div>
-        <p class="pricing-ideal">Idéal pour : arbitrage rapide, séance, support ciblé.</p>
+        <p class="pricing-ideal">Id&eacute;al pour&nbsp;: arbitrage rapide, s&eacute;ance, support cibl&eacute;.</p>
       </div>
       <div class="pricing-card">
         <div class="pricing-num">02</div>
         <h3>Forfait mensuel</h3>
-        <p>Pour un besoin récurrent avec un volume maîtrisé et une visibilité budgétaire.</p>
+        <p>Pour un besoin r&eacute;current avec un volume ma&icirc;tris&eacute; et une visibilit&eacute; budg&eacute;taire.</p>
         <div class="price" style="font-size:1.4rem;color:var(--gray)">Sur discussion</div>
-        <p class="pricing-ideal">Idéal pour : suivi régulier, présence terrain hebdomadaire.</p>
+        <p class="pricing-ideal">Id&eacute;al pour&nbsp;: suivi r&eacute;gulier, pr&eacute;sence terrain hebdomadaire.</p>
       </div>
       <div class="pricing-card">
         <div class="pricing-num">03</div>
         <h3>Au projet</h3>
-        <p>Sur devis selon périmètre défini. Engagement sur le livrable, transparence sur le coût.</p>
+        <p>Sur devis selon p&eacute;rim&egrave;tre d&eacute;fini. Engagement sur le livrable, transparence sur le co&ucirc;t.</p>
         <div class="price" style="font-size:1.4rem;color:var(--gray)">Sur devis</div>
-        <p class="pricing-ideal">Idéal pour : mission complète, direction de projet, EG/ET.</p>
+        <p class="pricing-ideal">Id&eacute;al pour&nbsp;: mission compl&egrave;te, direction de projet, EG/ET.</p>
       </div>
     </div>
   </div>
@@ -297,24 +314,33 @@
   <div class="container">
     <div class="section-label">Portfolio</div>
     <h2>Portfolio</h2>
-    <p class="section-sub">Des fiches références fondées sur +15 ans d'expérience qui inspirent confiance</p>
-    <div class="portfolio-grid" id="portfolio-grid">
+    <p class="section-sub">Des fiches r&eacute;f&eacute;rences fond&eacute;es sur +15 ans d&rsquo;exp&eacute;rience qui inspirent confiance</p>
+    <div class="portfolio-grid">
       <div class="project-card">
-        <div class="project-card-img"><span>Photo à venir</span></div>
+        <div class="project-card-img"><img src="assets/portfolio-1.jpeg" alt="Logement - R&eacute;novation" loading="lazy"></div>
         <div class="project-card-body">
           <div class="project-category">Direction de Travaux</div>
-          <h3>Logement — Rénovation &amp; Extension</h3>
-          <p>Fiche de référence à compléter</p>
-          <div class="project-meta"><strong>Mission :</strong> Direction de travaux &nbsp;·&nbsp; <strong>Valeur ajoutée :</strong> Coordination fluide, maîtrise du rythme</div>
+          <h3>Logement &mdash; R&eacute;novation &amp; Extension</h3>
+          <p>Fiche de r&eacute;f&eacute;rence &agrave; compl&eacute;ter</p>
+          <div class="project-meta"><strong>Mission&nbsp;:</strong> Direction de travaux &nbsp;&middot;&nbsp; <strong>Valeur ajout&eacute;e&nbsp;:</strong> Coordination fluide, ma&icirc;trise du rythme</div>
         </div>
       </div>
       <div class="project-card">
-        <div class="project-card-img"><span>Photo à venir</span></div>
+        <div class="project-card-img"><img src="assets/portfolio-2.jpeg" alt="Immeuble - Bureaux" loading="lazy"></div>
         <div class="project-card-body">
           <div class="project-category">Gestion de Projet</div>
           <h3>Immeuble / Bureaux / Surfaces mixtes</h3>
-          <p>Fiche de référence à compléter</p>
-          <div class="project-meta"><strong>Mission :</strong> Gestion de projet MO &nbsp;·&nbsp; <strong>Valeur ajoutée :</strong> Cadrage, arbitrage, tenue budgétaire</div>
+          <p>Fiche de r&eacute;f&eacute;rence &agrave; compl&eacute;ter</p>
+          <div class="project-meta"><strong>Mission&nbsp;:</strong> Gestion de projet MO &nbsp;&middot;&nbsp; <strong>Valeur ajout&eacute;e&nbsp;:</strong> Cadrage, arbitrage, tenue budg&eacute;taire</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-img"><img src="assets/portfolio-3.jpeg" alt="Projet r&eacute;f&eacute;rence" loading="lazy"></div>
+        <div class="project-card-body">
+          <div class="project-category">Services &amp; Support</div>
+          <h3>Support op&eacute;rationnel &amp; Conseil</h3>
+          <p>Fiche de r&eacute;f&eacute;rence &agrave; compl&eacute;ter</p>
+          <div class="project-meta"><strong>Mission&nbsp;:</strong> Renfort op&eacute;rationnel &nbsp;&middot;&nbsp; <strong>Valeur ajout&eacute;e&nbsp;:</strong> Fluidit&eacute;, r&eacute;activit&eacute;, transparence</div>
         </div>
       </div>
     </div>
@@ -326,42 +352,42 @@
   <div class="container">
     <div class="section-label">Contact</div>
     <h2>Contact</h2>
-    <p class="section-sub">Parlons du cadre, du besoin et du bon niveau d'intervention.</p>
+    <p class="section-sub">Parlons du cadre, du besoin et du bon niveau d&rsquo;intervention.</p>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>Coordonnées</h3>
+        <h3>Coordonn&eacute;es</h3>
         <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <div><strong>Téléphone</strong><p><a href="tel:+41767012720" style="color:#333;text-decoration:none">+41 76 701 27 20</a></p></div>
+          <span class="contact-icon">&#128222;</span>
+          <div><strong>T&eacute;l&eacute;phone</strong><p><a href="tel:+41767012720" style="color:#333;text-decoration:none">+41 76 701 27 20</a></p></div>
         </div>
         <div class="contact-item">
-          <span class="contact-icon">✉️</span>
+          <span class="contact-icon">&#9993;&#65039;</span>
           <div><strong>Email</strong><p><a href="mailto:info@holdinginfine.com" style="color:#333;text-decoration:none">info@holdinginfine.com</a></p></div>
         </div>
         <div class="contact-item">
-          <span class="contact-icon">📍</span>
+          <span class="contact-icon">&#128205;</span>
           <div><strong>Adresse</strong><p>Chemin des Cigognes 4<br>1162 St-Prex</p></div>
         </div>
       </div>
       <div>
-        <p style="font-size:.9rem;color:#555;margin-bottom:2rem;line-height:1.7">Qui vous êtes, ce que vous cherchez, quand vous souhaitez démarrer, et sur quel type de mission.</p>
+        <p style="font-size:.9rem;color:#555;margin-bottom:2rem;line-height:1.7">Qui vous &ecirc;tes, ce que vous cherchez, quand vous souhaitez d&eacute;marrer, et sur quel type de mission.</p>
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <p style="display:none"><input name="bot-field"></p>
           <div class="form-group"><label>Nom complet *</label><input type="text" name="nom" required placeholder="Jean Dupont"></div>
           <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="jean@exemple.com"></div>
-          <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="+41 00 000 00 00"></div>
+          <div class="form-group"><label>T&eacute;l&eacute;phone</label><input type="tel" name="telephone" placeholder="+41 00 000 00 00"></div>
           <div class="form-group"><label>Type de mission</label>
             <select name="mission">
-              <option value="">Sélectionner...</option>
+              <option value="">S&eacute;lectionner...</option>
               <option>Direction de Travaux</option>
               <option>Gestion de Projet</option>
               <option>Services &amp; Support</option>
-              <option>Autre / À définir</option>
+              <option>Autre / &Agrave; d&eacute;finir</option>
             </select>
           </div>
-          <div class="form-group"><label>Délai souhaité</label><input type="text" name="delai" placeholder="ex: Dès que possible, Q2 2026..."></div>
-          <div class="form-group"><label>Votre projet *</label><textarea name="message" required placeholder="Décrivez votre projet ou votre besoin..."></textarea></div>
+          <div class="form-group"><label>D&eacute;lai souhait&eacute;</label><input type="text" name="delai" placeholder="ex: D&egrave;s que possible, Q2 2026..."></div>
+          <div class="form-group"><label>Votre projet *</label><textarea name="message" required placeholder="D&eacute;crivez votre projet ou votre besoin..."></textarea></div>
           <button type="submit" class="btn btn-primary">Envoyer le message</button>
         </form>
       </div>
@@ -370,7 +396,7 @@
 </section>
 
 <footer>
-  <p>© 2025 Infine Sàrl Holding &nbsp;·&nbsp; Chemin des Cigognes 4, 1162 St-Prex &nbsp;·&nbsp; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &nbsp;·&nbsp; <a href="tel:+41767012720">+41 76 701 27 20</a></p>
+  <p>&copy; 2025 Infine S&agrave;rl Holding &nbsp;&middot;&nbsp; Chemin des Cigognes 4, 1162 St-Prex &nbsp;&middot;&nbsp; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &nbsp;&middot;&nbsp; <a href="tel:+41767012720">+41 76 701 27 20</a></p>
 </footer>
 
 </body>
