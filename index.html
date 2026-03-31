@@ -9,192 +9,211 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
 :root{
-  --cream:#F2EDE8;--cream-dark:#E8D9C5;--gold:#C4993B;--gold-light:#D4A94B;
-  --dark:#1A1A1A;--navy:#1C2A35;--body-text:#3A3A3A;--gray:#6A6A6A;--gray-light:#8A8A8A;
-  --border:#D8D2CA;--white:#FFFFFF;--card-bg:#FFFFFF;--pill-bg:#EBE5DD;
+  --cream:#F5F0EB;--cream-dark:#EBE5DD;--gold:#C4A265;--gold-light:#D4A94B;
+  --dark:#1A1A1A;--navy:#1C2A35;--body-text:#333;--gray:#555;--gray-light:#888;
+  --border:#D4CFC8;--white:#FFF;--pill-bg:#F0EBE3;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--cream);font-size:16px;line-height:1.6}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--cream);font-size:15px;line-height:1.6}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--cream);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:72px}
-.nav-brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--dark)}
+nav{position:sticky;top:0;z-index:100;background:var(--cream);padding:0 65px;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--dark)}
 .nav-brand-text{line-height:1.15}
-.nav-brand-text .top{font-weight:800;font-size:1.1rem;letter-spacing:.08em;display:block}
-.nav-brand-text .bot{font-weight:400;font-size:.8rem;letter-spacing:.18em;color:var(--gray);display:block}
+.nav-brand-text .top{font-weight:900;font-size:22px;letter-spacing:2px;display:block}
+.nav-brand-text .bot{font-weight:400;font-size:14px;letter-spacing:3px;color:var(--dark);display:block}
 .nav-brand-bar{width:4px;height:40px;background:var(--gold);border-radius:2px}
-.nav-links{display:flex;gap:2.2rem;list-style:none;align-items:center}
-.nav-links a{text-decoration:none;color:var(--gray);font-size:.82rem;font-weight:400;letter-spacing:.02em;transition:color .2s;padding-bottom:6px;border-bottom:2px solid transparent}
-.nav-links a:hover,.nav-links a.active{color:var(--dark);font-weight:600;border-bottom-color:var(--gold)}
+.nav-links{display:flex;gap:50px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:#333;font-size:14px;font-weight:400;padding-bottom:6px;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--dark)}
+.nav-links a.active{color:var(--dark);font-weight:600;border-bottom-color:var(--dark)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
 .nav-toggle span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px}
 
-/* LAYOUT */
-.container{max-width:1200px;margin:0 auto;padding:0 2.5rem}
+.container{max-width:1200px;margin:0 auto;padding:0 65px}
 
 /* PILLS */
-.pill{display:inline-block;background:var(--gold);color:var(--white);padding:.5rem 1.5rem;border-radius:30px;font-size:.82rem;font-weight:500}
-.pill-light{background:var(--pill-bg);color:var(--body-text);border:1px solid var(--border)}
-.pill-outline{background:transparent;color:var(--body-text);border:1.5px solid var(--border)}
+.pill{display:inline-block;padding:10px 28px;border-radius:25px;font-size:14px;font-weight:400}
 .pill-dark{background:var(--navy);color:var(--white)}
-.pill-frosted{background:rgba(255,255,255,.15);color:var(--white);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px)}
+.pill-light{background:var(--pill-bg);color:var(--dark);border:1px solid var(--border)}
+.pill-outline{background:transparent;color:var(--body-text);border:1px solid var(--border);padding:8px 22px;font-size:13px;font-weight:500}
 
 /* BUTTONS */
-.btn{display:inline-block;padding:.75rem 2rem;border-radius:30px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn{display:inline-block;padding:14px 32px;border-radius:25px;font-size:14px;font-weight:400;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
 .btn-dark{background:var(--navy);color:var(--white)}
 .btn-dark:hover{background:#2B3545}
-.btn-outline{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.btn-outline{border:1.5px solid #B0AAA0;color:#333;background:transparent}
 .btn-outline:hover{background:var(--navy);color:var(--white)}
-.btn-group{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-group{display:flex;gap:15px;flex-wrap:wrap}
 
-/* HEADINGS */
-h1,.h1{font-family:"Playfair Display",serif;font-size:clamp(1.8rem,3.2vw,2.4rem);font-weight:600;line-height:1.4;color:var(--dark);letter-spacing:3px}
-h2,.h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;line-height:1.25;color:var(--dark);letter-spacing:.3px;margin-bottom:.75rem}
-h3{font-family:"Playfair Display",serif;font-size:1.25rem;font-weight:700;color:var(--dark);margin-bottom:.5rem;letter-spacing:.5px}
-.sub{font-size:.95rem;color:var(--body-text);line-height:1.7;max-width:660px}
-.body-text{font-size:.9rem;color:var(--body-text);line-height:1.75}
-.gold-text{color:var(--gold)}
-.quote-italic{font-style:italic;color:var(--gold);font-size:.9rem;line-height:1.6;border-top:1px solid var(--border);padding-top:1.2rem;margin-top:1.5rem}
+/* TYPE */
+h1,.h1{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;line-height:1.4;color:var(--dark);letter-spacing:3px}
+h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;line-height:1.25;color:var(--dark);letter-spacing:3px;margin-bottom:8px}
+h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark);letter-spacing:.5px;margin-bottom:8px}
+h4{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px}
+.sub{font-size:16px;color:var(--body-text);line-height:1.6}
+.body-text{font-size:15px;color:var(--body-text);line-height:1.6}
+.gold-italic{font-style:italic;color:var(--gold);font-size:16px;border-top:1px solid var(--border);padding-top:12px;margin-top:40px;margin-bottom:12px}
 
-/* HERO */
-.hero{padding:60px 0 0}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;min-height:460px}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:1rem 0}
-.hero-left .pill{margin-bottom:1.8rem;width:fit-content}
-.hero-left h1{margin-bottom:1.5rem}
-.hero-right{position:relative;border-radius:6px;overflow:hidden;min-height:400px}
+/* ===== PAGE 1: HERO ===== */
+.hero{padding:15px 0 0}
+.hero-grid{display:grid;grid-template-columns:46% 54%;gap:40px;min-height:420px}
+.hero-left{padding:40px 0 0;display:flex;flex-direction:column}
+.hero-left .pill{margin-bottom:20px;width:fit-content}
+.hero-left h1{margin-bottom:0}
+.hero-left .body-text{margin-bottom:25px}
+.hero-right{position:relative;min-height:420px}
 .hero-right img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.42);display:flex;flex-direction:column;justify-content:flex-start;padding:2.5rem}
-.hero-overlay .label{font-size:.78rem;font-weight:400;color:rgba(255,255,255,.8);margin-bottom:.4rem}
-.hero-overlay p{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--white);line-height:1.3;max-width:320px}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);padding:40px 50px;display:flex;flex-direction:column;justify-content:flex-start}
+.hero-overlay .label{font-size:15px;color:rgba(255,255,255,.8);margin-bottom:8px}
+.hero-overlay p{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--white);line-height:1.35;letter-spacing:3px;max-width:500px}
 
 /* SERVICE STRIP */
-.svc-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
-.svc-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.8rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.svc-head{display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem}
-.svc-num{width:38px;height:38px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;color:var(--gold);flex-shrink:0}
-.svc-card p{font-size:.82rem;color:var(--gray);line-height:1.55}
+.svc-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:35px}
+.svc-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:25px 20px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.svc-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.svc-num{width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--gold);flex-shrink:0}
+.svc-card h3{font-size:22px;letter-spacing:.5px}
+.svc-card p{font-size:14px;color:var(--gray);line-height:1.5}
+.prix-pill{display:inline-block;background:var(--pill-bg);color:var(--dark);padding:14px 20px;border-radius:8px;font-size:14px;font-weight:600;margin-top:15px}
+.page-foot{display:flex;justify-content:space-between;padding:18px 0;margin-top:25px;border-top:1px solid #E0DCD6;font-size:12px;color:var(--gray-light)}
 
-.prix-pill{display:inline-block;background:var(--pill-bg);color:var(--dark);padding:.6rem 1.5rem;border-radius:8px;font-size:.85rem;font-weight:500;margin-top:1.5rem}
-
-.page-foot{display:flex;justify-content:space-between;padding:1.5rem 0;margin-top:2rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--gray-light)}
-
-/* INNER PAGES — 2 col with image */
-.page-2col{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:2.5rem auto;max-width:1200px;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.page-2col.reverse{direction:rtl}.page-2col.reverse>*{direction:ltr}
-.page-img{min-height:500px;position:relative}
+/* ===== INNER PAGES: 2-COL ===== */
+[id]{scroll-margin-top:80px}
+.page-2col{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:20px auto;max-width:1200px;min-height:460px}
+.page-2col .page-img:last-child{margin-right:-65px}
+.page-img{position:relative;overflow:hidden}
 .page-img img{width:100%;height:100%;object-fit:cover;display:block}
-.page-content{padding:2.5rem 3rem;display:flex;flex-direction:column;justify-content:center}
-.page-content .pill{margin-bottom:1.2rem;width:fit-content}
-.page-content h2{margin-bottom:.6rem}
-.page-content .sub{margin-bottom:1.2rem}
-.page-content .body-text{margin-bottom:1.5rem}
+.page-text-card{background:var(--white);border:1px solid var(--border);border-radius:0 16px 16px 0;padding:36px 40px;display:flex;flex-direction:column;justify-content:center}
+.page-text-card.left-radius{border-radius:16px 0 0 16px}
+.page-text-card .pill{margin-bottom:16px;width:fit-content}
+.page-text-card h2{font-size:36px;letter-spacing:3px;margin-bottom:16px}
+.page-text-card .sub{margin-bottom:16px}
+.page-text-card .body-text{margin-bottom:12px}
 
 /* TAGS */
-.tags{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
-.tags .pill-outline{font-size:.78rem;padding:.35rem 1rem}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
 
 /* CARD GRIDS */
-.card-row{display:grid;gap:1.2rem;margin:1.5rem 0}
+.card-row{display:grid;gap:20px;margin:20px auto;max-width:1200px;padding:0 0}
 .card-row.cols-4{grid-template-columns:repeat(4,1fr)}
 .card-row.cols-3{grid-template-columns:repeat(3,1fr)}
 .card-row.cols-2{grid-template-columns:repeat(2,1fr)}
-.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.6rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.card h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
-.card p{font-size:.82rem;color:var(--gray);line-height:1.6}
-
-/* STANDALONE SECTION (no image) */
-.section-block{margin:2.5rem auto;max-width:1200px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:3rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.card p{font-size:14px;color:#4A4A4A;line-height:1.6}
 
 /* DARK BANNER */
-.dark-banner{background:var(--navy);color:var(--white);border-radius:12px;padding:2rem 2.5rem;margin-top:2rem}
-.dark-banner h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin-bottom:.5rem}
-.dark-banner p{font-size:.92rem;line-height:1.7}
+.dark-banner{background:var(--navy);color:var(--white);border-radius:12px;padding:36px 40px;margin:20px auto;max-width:1200px}
+.dark-banner p{font-size:16px;line-height:1.7}
+.dark-banner a{color:var(--white);text-decoration:none}
 
 /* CTA BANNER */
-.cta-banner{background:var(--cream-dark);border-radius:12px;padding:1.8rem 2.5rem;margin-top:1.5rem}
-.cta-banner p{font-size:.9rem;color:var(--body-text);line-height:1.7}
-.cta-banner a{color:var(--gold);font-weight:600;text-decoration:none}
+.cta-banner{background:var(--cream-dark);border-radius:12px;padding:30px 40px;margin:20px auto;max-width:1200px}
+.cta-banner p{font-size:16px;color:var(--body-text);line-height:1.7;font-style:italic}
+
+/* SECTION BLOCK */
+.section-block{margin:20px auto;max-width:1200px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:40px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 
 /* TARIFS */
-.tarif-hero{position:relative;border-radius:16px;overflow:hidden;margin:2.5rem auto;max-width:1200px;min-height:200px}
+.tarif-hero{position:relative;border-radius:16px;overflow:hidden;margin:20px auto;max-width:1200px;min-height:220px}
 .tarif-hero img{width:100%;height:100%;object-fit:cover;display:block;min-height:220px}
-.tarif-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(30,42,58,.88) 50%,rgba(30,42,58,.3) 100%);padding:3rem;display:flex;flex-direction:column;justify-content:center}
-.tarif-hero-overlay h2{color:var(--white);margin-bottom:.6rem}
+.tarif-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(28,42,53,.9) 50%,rgba(28,42,53,.3) 100%);padding:40px;display:flex;flex-direction:column;justify-content:center}
+.tarif-hero-overlay h2{color:var(--white);letter-spacing:3px}
 .tarif-hero-overlay .sub{color:rgba(255,255,255,.85)}
-.tarif-hero-overlay .ht{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.5rem}
+.tarif-hero-overlay .ht{font-size:13px;color:rgba(255,255,255,.6);margin-top:8px}
 
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin:2.5rem auto;max-width:1200px}
-.pricing-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2.2rem 1.8rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:20px auto;max-width:1200px}
+.pricing-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 24px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 .pricing-card.dark{background:var(--navy);color:var(--white);border-color:var(--navy)}
 .pricing-card.dark p{color:rgba(255,255,255,.75)}
 .pricing-card.dark .pricing-ideal{color:rgba(255,255,255,.5)}
 .pricing-card.dark .price{color:var(--white)}
 .pricing-card.dark hr{border-color:rgba(255,255,255,.15)}
-.pricing-num{font-size:.78rem;font-weight:600;color:var(--gold);margin-bottom:.4rem}
-.pricing-card h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:.75rem}
-.price{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin:.75rem 0 .5rem}
-.price span{font-size:.85rem;font-weight:400;color:var(--gray)}
-.pricing-card p{font-size:.82rem;color:var(--gray);line-height:1.55}
-.pricing-card hr{border:none;border-top:1px solid var(--border);margin:.75rem 0}
-.pricing-ideal{font-size:.78rem;color:var(--gray-light);font-style:italic}
+.pricing-num{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px}
+.pricing-card h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:10px}
+.price{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;margin:10px 0 6px}
+.price span{font-size:14px;font-weight:400;color:var(--gray)}
+.pricing-card p{font-size:14px;color:var(--gray);line-height:1.55}
+.pricing-card hr{border:none;border-top:1px solid var(--border);margin:10px 0}
+.pricing-ideal{font-size:13px;color:var(--gray-light);font-style:italic}
 
 /* PORTFOLIO */
-.portfolio-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:1.2rem}
-.portfolio-imgs img{width:100%;height:200px;object-fit:cover;border-radius:4px;display:block}
-.portfolio-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.pf-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.pf-num{font-size:.78rem;font-weight:600;color:var(--gold);margin-bottom:.3rem}
-.pf-card h3{font-size:.95rem;margin-bottom:.4rem}
-.pf-card p{font-size:.78rem;color:var(--gray);line-height:1.5}
+.portfolio-imgs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
+.portfolio-imgs img{width:100%;height:200px;object-fit:cover;display:block}
+.portfolio-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pf-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.pf-num{font-size:13px;font-weight:600;color:var(--gold);margin-bottom:4px}
+.pf-card h3{font-size:18px;margin-bottom:6px}
+.pf-card p{font-size:13px;color:var(--gray);line-height:1.5}
 
 /* CONTACT */
-.contact-2col{display:grid;grid-template-columns:1.1fr 1fr;gap:0;margin:2.5rem auto;max-width:1200px;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-.contact-left{padding:2.5rem 3rem}
-.contact-right{position:relative;min-height:600px}
-.contact-right img{width:100%;height:100%;object-fit:cover;display:block}
-.contact-right-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:space-between;padding:2.5rem}
-.contact-right-overlay .top-label{font-size:.82rem;color:rgba(255,255,255,.8);margin-bottom:.75rem}
-.contact-right-overlay .pills{display:flex;gap:.6rem;flex-wrap:wrap}
-.contact-right-overlay .bottom-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:.95rem;color:rgba(255,255,255,.9);line-height:1.6}
-.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
-.contact-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.contact-2col{display:grid;grid-template-columns:1.1fr 1fr;gap:0;margin:20px auto;max-width:1200px;overflow:hidden}
+.contact-left{padding:0 40px 0 0}
+.contact-left .pill{margin-bottom:16px;display:inline-block}
+.contact-left h2{letter-spacing:3px;margin-bottom:12px}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px}
 .contact-card.wide{grid-column:1/-1}
-.contact-card strong{display:block;font-size:.82rem;font-weight:700;margin-bottom:.3rem}
-.contact-card p{font-size:.85rem;color:var(--body-text);line-height:1.5}
+.contact-card strong{display:block;font-size:14px;font-weight:700;letter-spacing:.5px;margin-bottom:4px}
+.contact-card p{font-size:14px;color:var(--body-text);line-height:1.5}
 .contact-card a{color:var(--body-text);text-decoration:none}
+.contact-right{position:relative;min-height:600px;border-radius:16px;overflow:hidden}
+.contact-right img{width:100%;height:100%;object-fit:cover;display:block}
+.contact-right-overlay{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;flex-direction:column;justify-content:space-between;padding:30px}
+.contact-right-overlay .top-label{font-size:14px;color:rgba(255,255,255,.8);margin-bottom:10px}
+.contact-right-overlay .pills{display:flex;gap:8px;flex-wrap:wrap}
+.pill-frosted{display:inline-block;background:rgba(255,255,255,.15);color:var(--white);border:1px solid rgba(255,255,255,.3);padding:8px 18px;border-radius:25px;font-size:13px;backdrop-filter:blur(4px)}
+.contact-right-overlay .bottom-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,.9);line-height:1.6}
 
 /* FORM */
-.form-group{margin-bottom:1rem}
-.form-group label{display:block;font-size:.78rem;font-weight:600;margin-bottom:.3rem;color:var(--dark)}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:.85rem;color:var(--dark);background:var(--white);transition:border-color .2s}
+.form-group{margin-bottom:12px}
+.form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:4px;color:var(--dark)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:14px;color:var(--dark);background:var(--white);transition:border-color .2s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--gold)}
 .form-group textarea{resize:vertical;min-height:100px}
 
 /* FOOTER */
-footer{padding:2rem 3rem;text-align:center;font-size:.75rem;color:var(--gray-light)}
+footer{padding:18px 65px;display:flex;justify-content:space-between;font-size:12px;color:var(--gray-light);border-top:1px solid #E0DCD6;margin-top:25px}
 footer a{color:var(--gray-light);text-decoration:none}
 footer a:hover{color:var(--gold)}
 
 /* MOBILE */
 @media(max-width:900px){
-  nav{padding:0 1.2rem}
-  .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--white);padding:1rem 2rem 1.5rem;border-bottom:1px solid var(--border);z-index:99;gap:.8rem}
+  nav{padding:0 20px}
+  .container{padding:0 20px}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:16px 20px;border-bottom:1px solid var(--border);z-index:99;gap:8px}
   .nav-links.open{display:flex}
   .nav-toggle{display:flex}
   .hero-grid,.page-2col,.contact-2col{grid-template-columns:1fr}
   .hero-right,.page-img,.contact-right{min-height:250px}
-  .page-2col.reverse{direction:ltr}
   .svc-strip,.card-row.cols-4,.card-row.cols-3,.card-row.cols-2,.pricing-grid,.portfolio-imgs,.portfolio-cards,.contact-cards{grid-template-columns:1fr}
-  .section-block,.page-content{padding:2rem 1.5rem}
-  .hero-overlay p{font-size:1.3rem}
+  .page-text-card{border-radius:0 0 16px 16px!important;padding:24px 20px}
+  footer{flex-direction:column;gap:4px;text-align:center;padding:18px 20px}
 }
   </style>
+  <script>
+  // Update active nav on scroll
+  document.addEventListener('DOMContentLoaded',function(){
+    var links=document.querySelectorAll('.nav-links a');
+    var sections=['accueil','direction','gestion','support','tarifs','portfolio','contact'];
+    function updateNav(){
+      var st=window.scrollY+100;
+      for(var i=sections.length-1;i>=0;i--){
+        var el=document.getElementById(sections[i]);
+        if(el&&el.offsetTop<=st){
+          links.forEach(function(a){a.classList.remove('active')});
+          links[i].classList.add('active');
+          break;
+        }
+      }
+    }
+    window.addEventListener('scroll',updateNav);
+  });
+  </script>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-brand" href="#accueil">
     <div class="nav-brand-text"><span class="top">HOLDING</span><span class="bot">INFINE</span></div>
@@ -212,46 +231,34 @@ footer a:hover{color:var(--gold)}
   </ul>
 </nav>
 
-<!-- ==================== PAGE 1: ACCUEIL ==================== -->
+<!-- ===== ACCUEIL ===== -->
 <section id="accueil" class="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
         <span class="pill pill-dark">Ambition cr&eacute;ative</span>
         <h1>Direction de travaux, gestion de projet et support op&eacute;rationnel pour des d&eacute;cisions plus claires et des r&eacute;alisations mieux tenues.</h1>
-        <p class="quote-italic">&ldquo;Vision without execution is just hallucination&rdquo; &ndash; Henry Ford</p>
-        <p class="body-text" style="margin:1.2rem 0 2rem;max-width:500px">Infine apporte une structure cr&eacute;ative &agrave; vos ambitions, elle arbitre les priorit&eacute;s et suit l&rsquo;ex&eacute;cution avec une exigence simple&nbsp;: faire avancer, s&eacute;curiser et livrer.</p>
+        <p class="gold-italic">&ldquo;Vision without execution is just hallucination&rdquo; - Henry Ford</p>
+        <p class="body-text"><strong>Infine apporte une structure cr&eacute;ative &agrave; vos ambitions,</strong> elle arbitre les priorit&eacute;s et suit l&rsquo;ex&eacute;cution avec une exigence simple&nbsp;: faire avancer, s&eacute;curiser et livrer.</p>
         <div class="btn-group">
           <a href="#direction" class="btn btn-dark">D&eacute;couvrir les expertises</a>
           <a href="#tarifs" class="btn btn-outline">Voir les tarifs</a>
         </div>
       </div>
       <div class="hero-right">
-        <img src="assets/hero-direction.jpg" alt="Direction de travaux">
+        <img src="assets/hero-direction.jpg" alt="Architecture">
         <div class="hero-overlay">
           <span class="label">Lecture claire&nbsp;:</span>
           <p>Trois axes. Des prix affich&eacute;s. Un contact unique et direct.</p>
         </div>
       </div>
     </div>
-
     <div class="svc-strip">
-      <div class="svc-card">
-        <div class="svc-head"><div class="svc-num">01</div><h3>Direction de Travaux</h3></div>
-        <p>Achat, coordination chantier, suivi qualit&eacute;, gestion des co&ucirc;ts et d&eacute;lais sous contr&ocirc;le.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-head"><div class="svc-num">02</div><h3>Gestion op&eacute;rationnelle de Projet</h3></div>
-        <p>Repr&eacute;sentation ind&eacute;pendante et pilotage global c&ocirc;t&eacute; ma&icirc;tre d&rsquo;ouvrage.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-head"><div class="svc-num">03</div><h3>Services &amp; Support</h3></div>
-        <p>Ex&eacute;cution directe en EG ou ET ou renfort cibl&eacute;&nbsp;: administratif, &eacute;v&eacute;nementiel, conseil etc.</p>
-      </div>
+      <div class="svc-card"><div class="svc-head"><div class="svc-num">01</div><h3>Direction de Travaux</h3></div><p>Achat, coordination chantier, suivi qualit&eacute;, gestion des co&ucirc;ts et d&eacute;lais sous contr&ocirc;le.</p></div>
+      <div class="svc-card"><div class="svc-head"><div class="svc-num">02</div><h3>Gestion op&eacute;rationnelle de Projet</h3></div><p>Repr&eacute;sentation ind&eacute;pendante et pilotage global c&ocirc;t&eacute; ma&icirc;tre d&rsquo;ouvrage.</p></div>
+      <div class="svc-card"><div class="svc-head"><div class="svc-num">03</div><h3>Services &amp; Support</h3></div><p>Ex&eacute;cution directe en EG ou ET ou renfort cibl&eacute;&nbsp;: administratif, &eacute;v&eacute;nementiel, conseil etc.</p></div>
     </div>
-
     <span class="prix-pill">Prix visibles&nbsp;: &agrave; l&rsquo;heure, au mois ou au projet.</span>
-
     <div class="page-foot">
       <span>Structure pens&eacute;e pour mobile et ordinateur</span>
       <span>holdinginfine.com &mdash; maquette de contenu</span>
@@ -259,11 +266,9 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- ==================== PAGE 2: DIRECTION DE TRAVAUX ==================== -->
+<!-- ===== DIRECTION DE TRAVAUX ===== -->
 <div id="direction" class="page-2col">
-  <div class="page-img"><img src="assets/direction-travaux.jpeg" alt="Direction de travaux" loading="lazy"></div>
-  <div class="page-content">
-    <span class="pill pill-light">Direction de Travaux</span>
+  <div class="page-text-card" style="border-radius:16px 0 0 16px">
     <h2>Direction de Travaux</h2>
     <p class="sub">1 chantier &agrave; la fois&nbsp;: tout avance mieux quand les responsabilit&eacute;s sont nettes et le suivi constant</p>
     <p class="body-text">Nous assurons la continuit&eacute; entre &eacute;tude, ex&eacute;cution et r&eacute;ception&nbsp;: planification, coordination des entreprises, contr&ocirc;le qualit&eacute;, suivi des co&ucirc;ts et respect du calendrier.</p>
@@ -274,62 +279,55 @@ footer a:hover{color:var(--gold)}
       <span class="pill pill-outline">Livrer</span>
     </div>
   </div>
+  <div class="page-img"><img src="assets/direction-travaux.jpeg" alt="Direction de travaux" loading="lazy"></div>
+</div>
+<div class="card-row cols-4">
+  <div class="card"><h4>Avant travaux</h4><p>D&eacute;finition des objectifs de qualit&eacute; et de co&ucirc;t, pr&eacute;paration des s&eacute;quences, <strong>mise en concurrence sur tous les lots lors de l&rsquo;acquisition,</strong> cadrage des intervenants, validation du rythme d&rsquo;ex&eacute;cution.</p></div>
+  <div class="card"><h4>Pendant travaux</h4><p>Pr&eacute;sence utile sur le terrain, d&eacute;cisions rapides, reporting clair et suivi des &eacute;carts.</p></div>
+  <div class="card"><h4>Fin de chantier</h4><p>R&eacute;ception structur&eacute;e, lev&eacute;e des r&eacute;serves, cl&ocirc;ture documentaire et remise ma&icirc;tris&eacute;e.</p></div>
+  <div class="card"><h4>B&eacute;n&eacute;fice client</h4><p>Moins de friction, moins d&rsquo;angles morts, plus de visibilit&eacute;&nbsp;: 1 responsable global</p></div>
+</div>
+<div class="dark-banner">
+  <p>Vous cherchez une direction de travaux capable de tenir le terrain sans alourdir la communication&nbsp;? Parlons du cadre, du rythme et des responsabilit&eacute;s.</p>
 </div>
 
-<div class="container">
-  <div class="card-row cols-4">
-    <div class="card"><h4>Avant travaux</h4><p>D&eacute;finition des objectifs de qualit&eacute; et de co&ucirc;t, pr&eacute;paration des s&eacute;quences, mise en concurrence sur tous les lots lors de l&rsquo;acquisition, cadrage des intervenants, validation du rythme d&rsquo;ex&eacute;cution.</p></div>
-    <div class="card"><h4>Pendant travaux</h4><p>Pr&eacute;sence utile sur le terrain, d&eacute;cisions rapides, reporting clair et suivi des &eacute;carts.</p></div>
-    <div class="card"><h4>Fin de chantier</h4><p>R&eacute;ception structur&eacute;e, lev&eacute;e des r&eacute;serves, cl&ocirc;ture documentaire et remise ma&icirc;tris&eacute;e.</p></div>
-    <div class="card"><h4>B&eacute;n&eacute;fice client</h4><p>Moins de friction, moins d&rsquo;angles morts, plus de visibilit&eacute;&nbsp;: 1 responsable global</p></div>
-  </div>
-  <div class="dark-banner">
-    <p>Vous cherchez une direction de travaux capable de tenir le terrain sans alourdir la communication&nbsp;? Parlons du cadre, du rythme et des responsabilit&eacute;s. <a href="#contact" style="color:var(--gold-light);text-decoration:none;font-weight:600">&rarr; Contactez-nous</a></p>
-  </div>
-</div>
-
-<!-- ==================== PAGE 3: GESTION DE PROJET ==================== -->
-<div id="gestion" class="page-2col" style="margin-top:2.5rem">
-  <div class="page-img"><img src="assets/gestion-projet.jpeg" alt="Gestion de projet" loading="lazy"></div>
-  <div class="page-content">
+<!-- ===== GESTION DE PROJET ===== -->
+<div id="gestion" class="page-2col">
+  <div class="page-text-card" style="border-radius:16px 0 0 16px">
     <span class="pill pill-light">Gestion de Projet</span>
-    <h2>Gestion de Projet</h2>
-    <p class="sub" style="font-style:italic">Un pilotage ind&eacute;pendant pour d&eacute;cider juste, au bon moment.</p>
-    <p class="body-text">Nous repr&eacute;sentons les int&eacute;r&ecirc;ts du client, du Ma&icirc;tre d&rsquo;ouvrage ou du Conseil d&rsquo;Administration&nbsp;: de la faisabilit&eacute; &agrave; la r&eacute;alisation &mdash; cadrage, arbitrage, budget, risques, coordination des parties prenantes.</p>
-    <p class="body-text" style="margin-top:.75rem">Nous dirigeons vos projets comme une entreprise&nbsp;: vision strat&eacute;gique, gouvernance organisationnelle et contr&ocirc;le op&eacute;rationnel (selon m&eacute;thode KISS)</p>
+    <h2 style="font-size:30px;letter-spacing:2px">Un pilotage ind&eacute;pendant pour d&eacute;cider juste, au bon moment.</h2>
+    <p class="body-text">Nous repr&eacute;sentons les int&eacute;r&ecirc;ts du client, du Ma&icirc;tre d&rsquo;ouvrage ou du Conseil d&rsquo;Administration&nbsp;: de la faisabilit&eacute; &agrave; la r&eacute;alisation&nbsp;: cadrage, arbitrage, budget, risques, coordination des parties prenantes.</p>
+    <p class="body-text" style="margin-top:12px">Nous dirigeons vos projets comme une entreprise&nbsp;: vision strat&eacute;gique, gouvernance organisationnelle et contr&ocirc;le op&eacute;rationnel (selon m&eacute;thode KISS)</p>
   </div>
+  <div class="page-img"><img src="assets/gestion-projet.jpeg" alt="Gestion de projet" loading="lazy"></div>
+</div>
+<div class="card-row cols-4">
+  <div class="card"><h4>Cadrer</h4><p>Objectifs, p&eacute;rim&egrave;tre, gouvernance, budget et priorit&eacute;s sont clarifi&eacute;s d&egrave;s l&rsquo;amont.</p></div>
+  <div class="card"><h4>Arbitrer</h4><p>Chaque choix est &eacute;valu&eacute; selon son impact concret sur la qualit&eacute;, le d&eacute;lai et le co&ucirc;t&nbsp;: les d&eacute;cisions sont s&eacute;curis&eacute;es.</p></div>
+  <div class="card"><h4>Piloter</h4><p>Le projet reste lisible gr&acirc;ce &agrave; des points de contr&ocirc;le courts, utiles et document&eacute;s.</p></div>
+  <div class="card"><h4>S&eacute;curiser</h4><p>Moins d&rsquo;impr&eacute;vus, plus de ma&icirc;trise.</p></div>
+</div>
+<div class="cta-banner">
+  <p>Vous avez besoin d&rsquo;un repr&eacute;sentant du ma&icirc;tre d&rsquo;ouvrage capable de tenir la ligne, de poser les bonnes questions et d&rsquo;acc&eacute;l&eacute;rer les d&eacute;cisions&nbsp;? Contactez-nous.</p>
 </div>
 
-<div class="container">
-  <div class="card-row cols-4">
-    <div class="card"><h4>Cadrer</h4><p>Objectifs, p&eacute;rim&egrave;tre, gouvernance, budget et priorit&eacute;s sont clarifi&eacute;s d&egrave;s l&rsquo;amont.</p></div>
-    <div class="card"><h4>Arbitrer</h4><p>Chaque choix est &eacute;valu&eacute; selon son impact concret sur la qualit&eacute;, le d&eacute;lai et le co&ucirc;t&nbsp;: les d&eacute;cisions sont s&eacute;curis&eacute;es.</p></div>
-    <div class="card"><h4>Piloter</h4><p>Le projet reste lisible gr&acirc;ce &agrave; des points de contr&ocirc;le courts, utiles et document&eacute;s.</p></div>
-    <div class="card"><h4>S&eacute;curiser</h4><p>Moins d&rsquo;impr&eacute;vus, plus de ma&icirc;trise.</p></div>
-  </div>
-  <div class="cta-banner">
-    <p>Vous avez besoin d&rsquo;un repr&eacute;sentant du ma&icirc;tre d&rsquo;ouvrage capable de tenir la ligne, de poser les bonnes questions et d&rsquo;acc&eacute;l&eacute;rer les d&eacute;cisions&nbsp;? <a href="#contact">&rarr; Contactez-nous</a></p>
-  </div>
-</div>
-
-<!-- ==================== PAGE 4: SERVICES & SUPPORT ==================== -->
-<div id="support" class="page-2col reverse" style="margin-top:2.5rem">
-  <div class="page-content">
+<!-- ===== SERVICES & SUPPORT ===== -->
+<div id="support" class="page-2col">
+  <div class="page-text-card" style="border-radius:16px 0 0 16px">
     <span class="pill pill-light">Services &amp; Support</span>
-    <h2>Services &amp; Support</h2>
-    <p class="sub" style="font-style:italic">Le renfort utile quand vous avez besoin d&rsquo;un relais fiable, discret et d&eacute;j&agrave; op&eacute;rationnel.</p>
-    <div class="card-row cols-2" style="margin-top:1.5rem">
-      <div class="card"><h4>R&eacute;alisation</h4><p>Ex&eacute;cution en toute responsabilit&eacute; de mandats en Entreprise Totale ou G&eacute;n&eacute;rale. Organisation d&rsquo;op&eacute;rations &eacute;v&eacute;nementielles.</p></div>
-      <div class="card"><h4>Support aux bureaux d&rsquo;&Eacute;tudes</h4><p>Appui ponctuel pour absorber les pics de charge&nbsp;; externalisation de t&acirc;ches administratives&nbsp;; support technique&nbsp;; Traduction FR/DE/EN/RO/ES.</p></div>
-      <div class="card"><h4>Gouvernance</h4><p>Mandat d&rsquo;Administrateur ind&eacute;pendant au sein du Conseil d&rsquo;Administration <strong>ou</strong> Renfort op&eacute;rationnel bas&eacute; sur la performance, transparence et tra&ccedil;abilit&eacute;.</p></div>
-      <div class="card"><h4>R&eacute;seautage et Apport d&rsquo;affaires</h4><p>Mise en relation de prospects avec b&eacute;n&eacute;ficiaires et &eacute;tablissement de relations commerciales.</p></div>
+    <h2 style="font-size:30px;letter-spacing:2px">Le renfort utile quand vous avez besoin d&rsquo;un relais fiable, discret et d&eacute;j&agrave; op&eacute;rationnel.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px">
+      <div class="card"><h4 style="font-size:18px">R&eacute;alisation</h4><p>Ex&eacute;cution en toute responsabilit&eacute; de mandats en Entreprise Totale ou G&eacute;n&eacute;rale. Organisation d&rsquo;op&eacute;rations &eacute;v&eacute;nementielles.</p></div>
+      <div class="card"><h4 style="font-size:18px">Support aux bureaux d&rsquo;&Eacute;tudes</h4><p>Appui ponctuel pour absorber les pics de charge&nbsp;; externalisation de t&acirc;ches administratives&nbsp;; support technique&nbsp;; Traduction FR/DE/EN/RO/ES.</p></div>
+      <div class="card"><h4 style="font-size:18px">Gouvernance</h4><p>Mandat d&rsquo;Administrateur ind&eacute;pendant au sein du Conseil d&rsquo;Administration <strong>ou</strong> Renfort op&eacute;rationnel bas&eacute; sur la performance, transparence et tra&ccedil;abilit&eacute;.</p></div>
+      <div class="card"><h4 style="font-size:18px">R&eacute;seautage et Apport d&rsquo;affaires</h4><p>Mise en relation de prospects avec b&eacute;n&eacute;ficiaires et &eacute;tablissement de relations commerciales.</p></div>
     </div>
-    <p class="quote-italic" style="border:none;padding:0;margin-top:1.5rem">&ldquo;Un soutien op&eacute;rationnel pr&eacute;cis pour que votre structure reste fluide, m&ecirc;me quand le projet se densifie.&rdquo;</p>
+    <p style="font-style:italic;color:var(--gold);font-size:15px;margin-top:20px;line-height:1.6">&ldquo;Un soutien op&eacute;rationnel pr&eacute;cis pour que votre structure reste fluide, m&ecirc;me quand le projet se densifie.&rdquo;</p>
   </div>
   <div class="page-img"><img src="assets/services-support.jpeg" alt="Services et support" loading="lazy"></div>
 </div>
 
-<!-- ==================== PAGE 5: TARIFS ==================== -->
+<!-- ===== TARIFS ===== -->
 <div id="tarifs" class="tarif-hero">
   <img src="assets/portfolio-3.jpeg" alt="Architecture" loading="lazy">
   <div class="tarif-hero-overlay">
@@ -338,42 +336,35 @@ footer a:hover{color:var(--gold)}
     <p class="ht">Les prix s&rsquo;entendent en CHF brut HT</p>
   </div>
 </div>
-
 <div class="pricing-grid">
   <div class="pricing-card">
     <div class="pricing-num">01</div>
     <h3>Tarif horaire</h3>
     <p>Pour un besoin ponctuel, une expertise cibl&eacute;e ou un appui court. Tous frais et charges compris. Rien de plus.</p>
     <div class="price">CHF 140<span>.00 / h</span></div>
-    <hr>
-    <p class="pricing-ideal">Id&eacute;al pour&nbsp;: arbitrage rapide, s&eacute;ance, support cibl&eacute;.</p>
+    <hr><p class="pricing-ideal">Id&eacute;al pour&nbsp;: arbitrage rapide, s&eacute;ance, support cibl&eacute;.</p>
   </div>
   <div class="pricing-card dark">
     <div class="pricing-num">02</div>
     <h3>Forfait mensuel</h3>
     <p>Pour un besoin r&eacute;current avec un volume ma&icirc;tris&eacute; et une visibilit&eacute; budg&eacute;taire.</p>
     <div class="price">Sur discussion</div>
-    <hr>
-    <p class="pricing-ideal">Id&eacute;al pour&nbsp;: suivi r&eacute;gulier, pr&eacute;sence terrain hebdomadaire.</p>
+    <hr><p class="pricing-ideal">Id&eacute;al pour&nbsp;: suivi r&eacute;gulier, pr&eacute;sence terrain hebdomadaire.</p>
   </div>
   <div class="pricing-card">
     <div class="pricing-num">03</div>
     <h3>Au projet</h3>
     <p>Sur devis selon p&eacute;rim&egrave;tre d&eacute;fini. Engagement sur le livrable, transparence sur le co&ucirc;t.</p>
     <div class="price">Sur devis</div>
-    <hr>
-    <p class="pricing-ideal">Id&eacute;al pour&nbsp;: mission compl&egrave;te, direction de projet, EG/ET.</p>
+    <hr><p class="pricing-ideal">Id&eacute;al pour&nbsp;: mission compl&egrave;te, direction de projet, EG/ET.</p>
   </div>
 </div>
 
-<!-- ==================== PAGE 6: PORTFOLIO ==================== -->
+<!-- ===== PORTFOLIO ===== -->
 <div id="portfolio" class="section-block">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem">
-    <div>
-      <h2>Portfolio</h2>
-      <p class="sub">Des fiches r&eacute;f&eacute;rences fond&eacute;es sur +15 ans d&rsquo;exp&eacute;rience qui inspirent confiance</p>
-    </div>
-    <span class="pill pill-light" style="flex-shrink:0;margin-top:.5rem">Fiches projet &agrave; compl&eacute;ter</span>
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
+    <div><h2>Portfolio</h2><p class="sub">Des fiches r&eacute;f&eacute;rences fond&eacute;es sur +15 ans d&rsquo;exp&eacute;rience qui inspirent confiance</p></div>
+    <span class="pill pill-light" style="flex-shrink:0;margin-top:6px">Fiches projet &agrave; compl&eacute;ter</span>
   </div>
   <div class="portfolio-imgs">
     <img src="assets/portfolio-1.jpeg" alt="Projet 1" loading="lazy">
@@ -385,40 +376,30 @@ footer a:hover{color:var(--gold)}
     <div class="pf-card"><div class="pf-num">Projet 02</div><h3>Immeuble / Bureaux / Surfaces mixtes</h3><p><strong>Mission&nbsp;:</strong> Gestion de projet MO<br><strong>Valeur ajout&eacute;e&nbsp;:</strong> Cadrage, arbitrage, tenue budg&eacute;taire</p></div>
     <div class="pf-card"><div class="pf-num">Projet 03</div><h3>Support op&eacute;rationnel &amp; Conseil</h3><p><strong>Mission&nbsp;:</strong> Renfort op&eacute;rationnel<br><strong>Valeur ajout&eacute;e&nbsp;:</strong> Fluidit&eacute;, r&eacute;activit&eacute;, transparence</p></div>
   </div>
-  <div class="dark-banner" style="margin-top:2rem">
+  <div class="dark-banner" style="margin:20px -40px -40px;border-radius:0 0 16px 16px">
     <p>Chaque r&eacute;f&eacute;rence montre le contexte, le r&ocirc;le tenu, le p&eacute;rim&egrave;tre de mission et le r&eacute;sultat obtenu. Peu de texte, mais des preuves.</p>
   </div>
 </div>
 
-<!-- ==================== PAGE 7: CONTACT ==================== -->
+<!-- ===== CONTACT ===== -->
 <div id="contact" class="contact-2col">
   <div class="contact-left">
-    <span class="pill pill-light" style="margin-bottom:1.2rem;display:inline-block">Contact</span>
+    <span class="pill pill-light">Contact</span>
     <h2>Parlons du cadre, du besoin et du bon niveau d&rsquo;intervention.</h2>
-    <p class="body-text" style="margin:1rem 0 1.5rem">Qui vous &ecirc;tes, ce que vous cherchez, quand vous souhaitez d&eacute;marrer, et sur quel type de mission.</p>
+    <p class="body-text" style="margin-bottom:16px">Qui vous &ecirc;tes, ce que vous cherchez, quand vous souhaitez d&eacute;marrer, et sur quel type de mission.</p>
     <div class="contact-cards">
-      <div class="contact-card">
-        <strong>T&eacute;l&eacute;phone</strong>
-        <p><a href="tel:+41767012720">+41 76 701 27 20</a></p>
-        <p style="font-size:.78rem;color:var(--gray);margin-top:.3rem">Contact direct pour un premier &eacute;change.</p>
-      </div>
-      <div class="contact-card">
-        <strong>Adresses</strong>
-        <p><a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a></p>
-        <p style="margin-top:.3rem">Chemin des Cigognes 4<br>1162 St-Prex</p>
-      </div>
+      <div class="contact-card"><strong>T&eacute;l&eacute;phone</strong><p><a href="tel:+41767012720">+41 76 701 27 20</a></p><p style="font-size:12px;color:var(--gray);margin-top:4px">Contact direct pour un premier &eacute;change.</p></div>
+      <div class="contact-card"><strong>Adresses</strong><p><a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a></p><p style="margin-top:4px">Chemin des Cigognes 4<br>1162 St-Prex</p></div>
       <div class="contact-card wide">
         <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <p style="display:none"><input name="bot-field"></p>
           <div class="form-group"><label>Nom complet *</label><input type="text" name="nom" required placeholder="Jean Dupont"></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div class="form-group"><label>Email *</label><input type="email" name="email" required placeholder="jean@exemple.com"></div>
             <div class="form-group"><label>T&eacute;l&eacute;phone</label><input type="tel" name="telephone" placeholder="+41 00 000 00 00"></div>
           </div>
-          <div class="form-group"><label>Type de mission</label>
-            <select name="mission"><option value="">S&eacute;lectionner...</option><option>Direction de Travaux</option><option>Gestion de Projet</option><option>Services &amp; Support</option><option>Autre / &Agrave; d&eacute;finir</option></select>
-          </div>
+          <div class="form-group"><label>Type de mission</label><select name="mission"><option value="">S&eacute;lectionner...</option><option>Direction de Travaux</option><option>Gestion de Projet</option><option>Services &amp; Support</option><option>Autre</option></select></div>
           <div class="form-group"><label>Votre projet *</label><textarea name="message" required placeholder="D&eacute;crivez votre projet ou votre besoin..."></textarea></div>
           <button type="submit" class="btn btn-dark">Envoyer le message</button>
         </form>
@@ -428,21 +409,15 @@ footer a:hover{color:var(--gold)}
   <div class="contact-right">
     <img src="assets/hero-gestion.jpg" alt="Contact" loading="lazy">
     <div class="contact-right-overlay">
-      <div>
-        <div class="top-label">Missions mises en avant</div>
-        <div class="pills">
-          <span class="pill pill-frosted">Direction de Travaux</span>
-          <span class="pill pill-frosted">Gestion de Projet MO</span>
-          <span class="pill pill-frosted">Support</span>
-        </div>
-      </div>
+      <div><div class="top-label">Missions mises en avant</div><div class="pills"><span class="pill-frosted">Direction de Travaux</span><span class="pill-frosted">Gestion de Projet MO</span><span class="pill-frosted">Support</span></div></div>
       <p class="bottom-quote">&ldquo;Un &eacute;change utile vaut mieux qu&rsquo;un long formulaire. Contactez-nous pour poser le cadre juste d&egrave;s le d&eacute;part.&rdquo;</p>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>&copy; 2025 Infine S&agrave;rl Holding &middot; Chemin des Cigognes 4, 1162 St-Prex &middot; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &middot; <a href="tel:+41767012720">+41 76 701 27 20</a></p>
+  <span>Structure pens&eacute;e pour mobile et ordinateur</span>
+  <span>&copy; 2025 Infine S&agrave;rl Holding &middot; <a href="mailto:info@holdinginfine.com">info@holdinginfine.com</a> &middot; <a href="tel:+41767012720">+41 76 701 27 20</a></span>
 </footer>
 
 </body>
