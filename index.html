@@ -483,5 +483,86 @@ footer a:hover{color:var(--gold)}
     window.netlifyIdentity.on("init",function(u){if(!u){window.netlifyIdentity.on("login",function(){document.location.href="/admin/"})}});
   }
 </script>
+<script>
+// CMS Data Loader — fetches JSON from _data/ and updates page content
+(function(){
+  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+  // ACCUEIL
+  fetch('/_data/accueil.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('accueil');
+    if(!sec)return;
+    var h1=sec.querySelector('h1'); if(h1&&d.hero_title) h1.textContent=d.hero_title;
+    var cards=sec.querySelectorAll('.svc-card');
+    if(cards[0]&&d.card1_title){cards[0].querySelector('h3').textContent=d.card1_title; cards[0].querySelector('p').textContent=d.card1_text;}
+    if(cards[1]&&d.card2_title){cards[1].querySelector('h3').textContent=d.card2_title; cards[1].querySelector('p').textContent=d.card2_text;}
+    if(cards[2]&&d.card3_title){cards[2].querySelector('h3').textContent=d.card3_title; cards[2].querySelector('p').textContent=d.card3_text;}
+  }).catch(function(){});
+
+  // DIRECTION
+  fetch('/_data/direction.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('direction');
+    if(!sec)return;
+    var h2=sec.querySelector('h2'); if(h2&&d.title) h2.textContent=d.title;
+    var sub=sec.querySelector('.sub'); if(sub&&d.subtitle) sub.textContent=d.subtitle;
+    var body=sec.querySelector('.body-text'); if(body&&d.intro) body.textContent=d.intro;
+    var cards=sec.querySelectorAll('.card');
+    if(cards[0]&&d.block1_title){cards[0].querySelector('h4').textContent=d.block1_title; cards[0].querySelector('p').textContent=d.block1_text;}
+    if(cards[1]&&d.block2_title){cards[1].querySelector('h4').textContent=d.block2_title; cards[1].querySelector('p').textContent=d.block2_text;}
+    if(cards[2]&&d.block3_title){cards[2].querySelector('h4').textContent=d.block3_title; cards[2].querySelector('p').textContent=d.block3_text;}
+    var banner=sec.querySelector('.dark-banner p'); if(banner&&d.cta) banner.textContent=d.cta;
+  }).catch(function(){});
+
+  // GESTION
+  fetch('/_data/gestion.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('gestion');
+    if(!sec)return;
+    var h2=sec.querySelector('h2'); if(h2&&d.subtitle) h2.textContent=d.subtitle;
+    var bodies=sec.querySelectorAll('.body-text');
+    if(bodies[0]&&d.intro) bodies[0].textContent=d.intro;
+    var cards=sec.querySelectorAll('.card');
+    if(cards[0]&&d.block1_title){cards[0].querySelector('h4').textContent=d.block1_title; cards[0].querySelector('p').textContent=d.block1_text;}
+    if(cards[1]&&d.block2_title){cards[1].querySelector('h4').textContent=d.block2_title; cards[1].querySelector('p').textContent=d.block2_text;}
+    if(cards[2]&&d.block3_title){cards[2].querySelector('h4').textContent=d.block3_title; cards[2].querySelector('p').textContent=d.block3_text;}
+    if(cards[3]&&d.block4_title){cards[3].querySelector('h4').textContent=d.block4_title; cards[3].querySelector('p').textContent=d.block4_text;}
+    var cta=sec.querySelector('.cta-banner p'); if(cta&&d.cta) cta.textContent=d.cta;
+  }).catch(function(){});
+
+  // SERVICES
+  fetch('/_data/services.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('support');
+    if(!sec)return;
+    var h2=sec.querySelector('h2'); if(h2&&d.subtitle) h2.textContent=d.subtitle;
+    var cards=sec.querySelectorAll('.card');
+    if(cards[0]&&d.service1_title){cards[0].querySelector('h4').textContent=d.service1_title; cards[0].querySelector('p').textContent=d.service1_text;}
+    if(cards[1]&&d.service2_title){cards[1].querySelector('h4').textContent=d.service2_title; cards[1].querySelector('p').textContent=d.service2_text;}
+    if(cards[2]&&d.service3_title){cards[2].querySelector('h4').textContent=d.service3_title; cards[2].querySelector('p').textContent=d.service3_text;}
+    if(cards[3]&&d.service4_title){cards[3].querySelector('h4').textContent=d.service4_title; cards[3].querySelector('p').textContent=d.service4_text;}
+  }).catch(function(){});
+
+  // TARIFS
+  fetch('/_data/tarifs.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('tarifs');
+    if(!sec)return;
+    var cards=sec.querySelectorAll('.tarif-card');
+    if(cards[0]&&d.plan1_name){cards[0].querySelector('h3').textContent=d.plan1_name; var p=cards[0].querySelector('.price'); if(p) p.textContent=d.plan1_price;}
+    if(cards[1]&&d.plan2_name){cards[1].querySelector('h3').textContent=d.plan2_name; var p=cards[1].querySelector('.price'); if(p) p.textContent=d.plan2_price;}
+    if(cards[2]&&d.plan3_name){cards[2].querySelector('h3').textContent=d.plan3_name; var p=cards[2].querySelector('.price'); if(p) p.textContent=d.plan3_price;}
+  }).catch(function(){});
+
+  // CONTACT
+  fetch('/_data/contact.json').then(r=>r.json()).then(d=>{
+    var sec=document.getElementById('contact');
+    if(!sec)return;
+    var ps=sec.querySelectorAll('p');
+    ps.forEach(function(p){
+      var t=p.textContent.trim();
+      if(t.match(/^\+41/)&&d.phone) p.textContent=d.phone;
+      if(t.match(/@/)&&d.email) p.textContent=d.email;
+    });
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
+
