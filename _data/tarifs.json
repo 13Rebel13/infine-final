@@ -1,0 +1,11 @@
+{
+  "plan1_name": "À l'heure",
+  "plan1_price": "CHF 140.00 / heure",
+  "plan1_desc": "Pour une intervention ponctuelle, un audit ou un besoin ciblé sans engagement de durée.",
+  "plan2_name": "Forfait mensuel",
+  "plan2_price": "CHF 13'800.00 / mois",
+  "plan2_desc": "Pour un besoin récurrent avec un volume maîtrisé et une visibilité budgétaire. Pas de surprise.",
+  "plan3_name": "Projet sur mesure",
+  "plan3_price": "Sur devis",
+  "plan3_desc": "Pour une mission définie par périmètre, calendrier et niveau d'intervention. Un engagement responsable."
+}

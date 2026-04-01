@@ -7,7 +7,48 @@ locale: fr
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+# Pages éditables
 collections:
+  - name: "pages"
+    label: "Pages du site"
+    files:
+      - label: "Accueil"
+        name: "accueil"
+        file: "_data/accueil.json"
+        fields:
+          - { label: "Titre principal", name: "hero_title", widget: "string" }
+          - { label: "Sous-titre", name: "hero_subtitle", widget: "string" }
+          - { label: "Description", name: "hero_text", widget: "text" }
+          - { label: "Carte 1 - Titre", name: "card1_title", widget: "string" }
+          - { label: "Carte 1 - Texte", name: "card1_text", widget: "text" }
+          - { label: "Carte 2 - Titre", name: "card2_title", widget: "string" }
+          - { label: "Carte 2 - Texte", name: "card2_text", widget: "text" }
+          - { label: "Carte 3 - Titre", name: "card3_title", widget: "string" }
+          - { label: "Carte 3 - Texte", name: "card3_text", widget: "text" }
+
+      - label: "Tarifs"
+        name: "tarifs"
+        file: "_data/tarifs.json"
+        fields:
+          - { label: "Formule 1 - Nom", name: "plan1_name", widget: "string" }
+          - { label: "Formule 1 - Prix", name: "plan1_price", widget: "string" }
+          - { label: "Formule 1 - Description", name: "plan1_desc", widget: "text" }
+          - { label: "Formule 2 - Nom", name: "plan2_name", widget: "string" }
+          - { label: "Formule 2 - Prix", name: "plan2_price", widget: "string" }
+          - { label: "Formule 2 - Description", name: "plan2_desc", widget: "text" }
+          - { label: "Formule 3 - Nom", name: "plan3_name", widget: "string" }
+          - { label: "Formule 3 - Prix", name: "plan3_price", widget: "string" }
+          - { label: "Formule 3 - Description", name: "plan3_desc", widget: "text" }
+
+      - label: "Contact"
+        name: "contact"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Téléphone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Adresse ligne 1", name: "address1", widget: "string" }
+          - { label: "Adresse ligne 2", name: "address2", widget: "string" }
+
   - name: "portfolio"
     label: "Projets Portfolio"
     label_singular: "Projet"
@@ -16,11 +57,10 @@ collections:
     slug: "{{slug}}"
     extension: "json"
     format: "json"
-    summary: "{{title}} — {{category}}"
     fields:
-      - { label: "Titre du projet", name: "title", widget: "string", hint: "Ex: Rénovation immeuble résidentiel, Lausanne" }
+      - { label: "Titre", name: "title", widget: "string" }
       - { label: "Catégorie", name: "category", widget: "select", options: ["Direction de Travaux", "Gestion de Projet", "Services & Support"] }
-      - { label: "Mission", name: "mission", widget: "string", hint: "Ex: Direction de travaux complète" }
-      - { label: "Valeur ajoutée", name: "value_add", widget: "string", hint: "Ex: Livraison en délai, 0 réserve à la réception" }
-      - { label: "Description", name: "description", widget: "text", hint: "Quelques lignes sur le projet" }
-      - { label: "Photo", name: "image", widget: "image", required: false, hint: "Photo du projet (optionnel)" }
+      - { label: "Mission", name: "mission", widget: "string" }
+      - { label: "Valeur ajoutée", name: "value_add", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Photo", name: "image", widget: "image", required: false }
