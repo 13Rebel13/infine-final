@@ -7,7 +7,6 @@ locale: fr
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# Pages éditables
 collections:
   - name: "pages"
     label: "Pages du site"
@@ -25,6 +24,56 @@ collections:
           - { label: "Carte 2 - Texte", name: "card2_text", widget: "text" }
           - { label: "Carte 3 - Titre", name: "card3_title", widget: "string" }
           - { label: "Carte 3 - Texte", name: "card3_text", widget: "text" }
+
+      - label: "Direction de Travaux"
+        name: "direction"
+        file: "_data/direction.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "text" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Bloc 1 - Titre", name: "block1_title", widget: "string" }
+          - { label: "Bloc 1 - Texte", name: "block1_text", widget: "text" }
+          - { label: "Bloc 2 - Titre", name: "block2_title", widget: "string" }
+          - { label: "Bloc 2 - Texte", name: "block2_text", widget: "text" }
+          - { label: "Bloc 3 - Titre", name: "block3_title", widget: "string" }
+          - { label: "Bloc 3 - Texte", name: "block3_text", widget: "text" }
+          - { label: "Conclusion", name: "conclusion", widget: "text" }
+          - { label: "Appel à l'action", name: "cta", widget: "text" }
+
+      - label: "Gestion de Projet"
+        name: "gestion"
+        file: "_data/gestion.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "text" }
+          - { label: "Introduction", name: "intro", widget: "text" }
+          - { label: "Bloc 1 - Titre", name: "block1_title", widget: "string" }
+          - { label: "Bloc 1 - Texte", name: "block1_text", widget: "text" }
+          - { label: "Bloc 2 - Titre", name: "block2_title", widget: "string" }
+          - { label: "Bloc 2 - Texte", name: "block2_text", widget: "text" }
+          - { label: "Bloc 3 - Titre", name: "block3_title", widget: "string" }
+          - { label: "Bloc 3 - Texte", name: "block3_text", widget: "text" }
+          - { label: "Bloc 4 - Titre", name: "block4_title", widget: "string" }
+          - { label: "Bloc 4 - Texte", name: "block4_text", widget: "text" }
+          - { label: "Conclusion", name: "conclusion", widget: "text" }
+          - { label: "Appel à l'action", name: "cta", widget: "text" }
+
+      - label: "Services & Support"
+        name: "services"
+        file: "_data/services.json"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Sous-titre", name: "subtitle", widget: "text" }
+          - { label: "Service 1 - Titre", name: "service1_title", widget: "string" }
+          - { label: "Service 1 - Texte", name: "service1_text", widget: "text" }
+          - { label: "Service 2 - Titre", name: "service2_title", widget: "string" }
+          - { label: "Service 2 - Texte", name: "service2_text", widget: "text" }
+          - { label: "Service 3 - Titre", name: "service3_title", widget: "string" }
+          - { label: "Service 3 - Texte", name: "service3_text", widget: "text" }
+          - { label: "Service 4 - Titre", name: "service4_title", widget: "string" }
+          - { label: "Service 4 - Texte", name: "service4_text", widget: "text" }
+          - { label: "Conclusion", name: "conclusion", widget: "text" }
 
       - label: "Tarifs"
         name: "tarifs"
